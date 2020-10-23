@@ -13,7 +13,7 @@ CREATE TABLE `users`(
     `last_name` VARCHAR(255) NOT NULL,
     `username` VARCHAR(8) UNIQUE NOT NULL,
     `password_hash` VARCHAR(255) NOT NULL,
-    `role` INTEGER(32) NOT NULL,
+    `role` TINYINT NOT NULL,
     `team_id` INT, 
     FOREIGN KEY (`team_id`) REFERENCES `teams`(`id`)
 );
