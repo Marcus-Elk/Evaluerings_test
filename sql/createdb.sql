@@ -13,7 +13,7 @@ CREATE TABLE `users`(
     `last_name` VARCHAR(255) NOT NULL,
     `username` VARCHAR(8) UNIQUE NOT NULL,
     `password_hash` VARCHAR(255) NOT NULL,
-    `role` TINYINT NOT NULL,
+    `roles` TINYINT NOT NULL,
     `team_id` INT, 
     FOREIGN KEY (`team_id`) REFERENCES `teams`(`id`)
 );
@@ -24,14 +24,14 @@ INSERT INTO `users`(
 	`last_name`,
 	`username`,
 	`password_hash`,
-	`role`,
+	`roles`,
 	`team_id`
 ) VALUES(
 	'Valdemar',
     'Friis',
     'vald0172',
-    '0',
-    0x00000001,
+    '$2y$10$XlnmtUeiTLCCvxKx9UGJb.1eCnf5iBqRmDd4.UVhRCvxH6mtr.sD6',
+    0b00000101,
     1
 );
 

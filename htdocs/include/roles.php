@@ -6,16 +6,16 @@
 		const ADMIN		= 1<<2;
 	}
 
-	function isStudent($roles) {
-		return ($roles & Roles::STUDENT) > 0;
+	function isStudent() {
+		return ($_SESSION['user_roles'] & Roles::STUDENT) > 0;
 	}
 	
-	function isTeacher($roles) {
-		return ($roles & Roles::TEACHER) > 0;
+	function isTeacher() {
+		return ($_SESSION['user_roles'] & Roles::TEACHER) > 0;
 	}
 	
-	function isAdmin($roles) {
-		return ($roles & Roles::ADMIN) > 0;
+	function isAdmin() {
+		return ($_SESSION['user_roles'] & Roles::ADMIN) > 0;
 	}
 
 	function makeStudent($roles = 0) {

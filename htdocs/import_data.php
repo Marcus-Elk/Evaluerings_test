@@ -1,7 +1,18 @@
 
 <?php
-    function usernameExists($conn, $username) {
-        $result = mysqli_query($conn, "SELECT * FROM `users` WHERE `users`.`username` = '{$username}'");
+    session_start();
+
+    require_once("./include/db_connect.php");
+    require_once("./include/roles.php");
+
+
+    if(isset($_SESSION['user_id'])) {
+        import();
+    }
+
+    function usernameExists($username) {
+        global $db;
+        $result = mysqli_query($db, "SELECT * FROM `users` WHERE `users`.`username` = '{$username}'");
         if(!$result) {
             echo(mysqli_error($conn)."<br>");
         } else {
@@ -9,7 +20,7 @@
         }
     }
 
-    function generateUsername($conn, $name) {
+    function generateUsername($name) {
         do {
             $username = substr($name, 0, 4);
             $username = str_pad($username, 4, "x");
@@ -17,24 +28,21 @@
             $username .= rand(0, 9);
             $username .= rand(0, 9);
             $username .= rand(0, 9);
-        } while(usernameExists($conn, $username));
-    
+        } while(usernameExists($username));
+        
         return $username;
     }
 
     function import() {
-        include_once("roles.php");
-        
-        $conn = mysqli_connect("localhost:3306", "root", "", "grfl_mat");
-        
-        $file = fopen(__DIR__."/data.csv", "r");    
-        
+        global $db;
+        $file = fopen("./include/data.csv", "r");    
+
         while(!feof($file)) {
             $line = fgets($file);
 
             $data = explode(",", $line);
 
-            $username = generateUsername($conn, $data[3]);
+            $username = generateUsername($data[3]);
 
             $roles = 0;
             if($data[1] === "Elev") {
@@ -50,7 +58,7 @@
                     `last_name`,
                     `username`,
                     `password_hash`,
-                    `role`,
+                    `roles`,
                     `team_id`
                 ) VALUES(
                     '{$data[3]}',
@@ -61,12 +69,10 @@
                     1
                 );";
 
-            $result = mysqli_query($conn, $query);
+            $result = mysqli_query($db, $query);
             if(!$result) {
-                echo(mysqli_error($conn)."<br>");
+                die(mysqli_error($db));
             }
         }
-        
-        
     }
 ?>
