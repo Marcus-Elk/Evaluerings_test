@@ -47,7 +47,7 @@ INSERT INTO `users`(
     'Mistarz',
     'will1852',
     '$2y$10$XlnmtUeiTLCCvxKx9UGJb.1eCnf5iBqRmDd4.UVhRCvxH6mtr.sD6',
-    0b00000101,
+    0b00000111,
     1
 );
 
