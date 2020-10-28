@@ -35,4 +35,21 @@ INSERT INTO `users`(
     1
 );
 
+INSERT INTO `users`(
+	`first_name`,
+	`last_name`,
+	`username`,
+	`password_hash`,
+	`roles`,
+	`team_id`
+) VALUES(
+	'William',
+    'Mistarz',
+    'will1852',
+    '$2y$10$XlnmtUeiTLCCvxKx9UGJb.1eCnf5iBqRmDd4.UVhRCvxH6mtr.sD6',
+    0b00000101,
+    1
+);
+
+
 SELECT * FROM `users` INNER JOIN `teams` ON `users`.`team_id` = `teams`.`id`;
