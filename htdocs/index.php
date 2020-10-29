@@ -23,9 +23,21 @@
                 echo("<br><button id=\"import\">import data</button>");
             }
 
+            if(isTeacher()){
+                echo("<br>You are logged in as a teacher");
+                echo("<br><a href=\"./Test/create_test.php\">Create a test</a>");
+            }
+
+            if(isStudent()){
+                echo("<br>You are logged in as a student");
+                echo("<br><a href=\"./Test/view_test.php\">Your available tests</a>");
+            }
+
         } else {
             echo("<a href=\"./account/login.php\">log in</a>");
         }
+        
+            
 
     ?>
 
