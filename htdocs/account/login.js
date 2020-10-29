@@ -7,28 +7,30 @@ $(document).ready(function() {
 		let password = $("#password").val().trim();
 
 		if(username !== "" && password !== "") {
+			
 			$.ajax({
-				url: 'authenticate.php',
+				url:  'authenticate.php',
 				type: 'post',
 				data: {
-					username:username,
-					password:password
+					username:	username,
+					password:	password
 				},
-				success: function(response) {
-					response = $.trim(response);
-
-					let msg = "";
+				success:function(response) {
+					json = JSON.parse(response);
 					
-					if(response == "success") {
-						window.location = "../index.php";
-					} else {
-						msg = "Invalid username or password";
+					switch(json.result) {
+						case 0:
+							window.location = "../index.php";
+							break;
+						case 1:
+							$("#msg").html("Invalid username or password");
+							break;
+						case -1:
+							$("#message").html("Serverside error occured, please try again later.");
+							break;
 					}
-					
-					$("#msg").html(msg);
 				}
 			});
 		}
-
 	});
 })
