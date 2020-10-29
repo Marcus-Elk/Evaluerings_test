@@ -13,7 +13,7 @@
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$password = mysqli_real_escape_string($db, $_POST['password']);
 
-		$query = "SELECT `id`, `first_name`, `last_name`, `roles`, `username`, `password_hash` FROM `users` WHERE `username`='{$username}';";
+		$query = "SELECT `id`, `first_name`, `last_name`, `username`, `password_hash`, `roles`, `team_id` FROM `users` WHERE username='$username';";
 		$result = mysqli_query($db, $query);
 		if(!$result) {
 			die(json_encode(array(
@@ -45,8 +45,7 @@
 		die(json_encode(array(
 			'result' => 0,
 		)));
+
 	}
-
-
 
 ?>

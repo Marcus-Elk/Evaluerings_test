@@ -1,7 +1,6 @@
 
 $(document).ready(function() {
 	$("#submit").click(function() {
-		
 		let firstName	= $("#first_name").val().trim();
 		let lastName	= $("#last_name").val().trim();
 		let password	= $("#password").val().trim();
@@ -23,7 +22,6 @@ $(document).ready(function() {
 				team:		team
 			},
 			success: function(response) {
-				
 				let json = JSON.parse(response);
 
 				if(json.result === 0) {

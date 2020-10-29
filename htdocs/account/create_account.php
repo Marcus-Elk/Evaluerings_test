@@ -19,6 +19,7 @@
 
 		$query = "INSERT INTO `users`(`first_name`, `last_name`, `username`, `password_hash`, `roles`, `team_id`)
 			VALUES('$firstName', '$lastName', '$username', '$passwordHash', 0, $team);";
+
 		$result = mysqli_query($db, $query);
 		if(!$result) {
 			die(json_encode(array(
@@ -47,7 +48,7 @@
 
     function usernameExists($username) {
         global $db;
-        $result = mysqli_query($db, "SELECT * FROM `users` WHERE `users`.`username` = '{$username}'");
+        $result = mysqli_query($db, "SELECT `id` FROM `users` WHERE `username` = '$username';");
         if(!$result) {
 			die("error");
         } else {

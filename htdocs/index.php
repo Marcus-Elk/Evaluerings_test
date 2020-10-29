@@ -16,6 +16,7 @@
         require_once("./include/roles.php");
 
         if(isset($_SESSION['user_id'])) {
+            echo("Username: {$_SESSION['username']}<br>");
             echo("<a href=\"./account/logout.php\">log out</a>");
             
             if(isAdmin()) {
@@ -34,10 +35,9 @@
             }
 
         } else {
-            echo("<a href=\"./account/login.php\">log in</a>");
+            echo("<a href=\"./account/login.php\">log in</a><br>");
+            echo("<a href=\"./account/signup.php\">sign up</a>");
         }
-        
-            
 
     ?>
 
