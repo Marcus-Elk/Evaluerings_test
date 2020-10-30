@@ -19,10 +19,10 @@
     <input id="test_title" name="title" placeholder="Title"></input>
     <br>
     
-    <label for="teams_select">Choose a team:</label>
-    <select id="teams_select" name="teams_select_name">
+    <label for="team_select">Choose a team:</label>
+    <select id="team_select" name="team_select_name">
         <?php
-            $sqlTeams = "SELECT `name` FROM `teams`;";
+            $sqlTeams = "SELECT * FROM `teams`;";
             $result = mysqli_query($db,$sqlTeams);
             
             if(!$result){

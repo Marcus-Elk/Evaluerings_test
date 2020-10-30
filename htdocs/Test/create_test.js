@@ -9,6 +9,7 @@ $(document).ready(function() {
     $("#save_test").click(function() {
         let test = {
             title: $("#test_title").val().trim(),
+            team_id: parseInt($("#team_select").val().trim()),
             questions: []
         };
         $("#test .question").each(function(q_index, q_element){
@@ -27,7 +28,9 @@ $(document).ready(function() {
 
         });
 
-        let json = JSON.stringify(test);
+        console.log(test);
+
+        /*let json = JSON.stringify(test);
         $.ajax({
             url: "push_test.php",
             type: "post",
@@ -40,6 +43,6 @@ $(document).ready(function() {
                     alert("Test successfully published! :)");
                 }
             }
-        })
+        });*/
     });
 });
