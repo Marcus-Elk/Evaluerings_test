@@ -33,9 +33,7 @@ $(document).ready(function() {
 
         });
 
-        //console.log(test);
-
-        /*let json = JSON.stringify(test);
+        let json = JSON.stringify(test);
         $.ajax({
             url: "push_test.php",
             type: "post",
@@ -48,6 +46,6 @@ $(document).ready(function() {
                     alert("Test successfully published! :)");
                 }
             }
-        });*/
+        });
     });
 });
