@@ -42,14 +42,7 @@ CREATE TABLE `answer_options`(
 );
 
 INSERT INTO `teams`(`name`) VALUES('L DDU TK 2');
-INSERT INTO `users`(
-	`first_name`,
-	`last_name`,
-	`username`,
-	`password_hash`,
-	`roles`,
-	`team_id`
-) VALUES(
+INSERT INTO `users`(`first_name`, `last_name`, `username`, `password_hash`, `roles`, `team_id`) VALUES(
 	'Valdemar',
     'Friis',
     'vald0172',
@@ -58,14 +51,7 @@ INSERT INTO `users`(
     1
 );
 
-INSERT INTO `users`(
-	`first_name`,
-	`last_name`,
-	`username`,
-	`password_hash`,
-	`roles`,
-	`team_id`
-) VALUES(
+INSERT INTO `users`(`first_name`, `last_name`, `username`, `password_hash`, `roles`, `team_id`) VALUES(
 	'William',
     'Mistarz',
     'will1852',
@@ -74,5 +60,3 @@ INSERT INTO `users`(
     1
 );
 
-
-SELECT * FROM `users` INNER JOIN `teams` ON `users`.`team_id` = `teams`.`id`;

@@ -17,7 +17,7 @@ $(document).ready(function() {
 				},
 				success:function(response) {
 					json = JSON.parse(response);
-					
+
 					switch(json.result) {
 						case 0:
 							window.location = "../index.php";
