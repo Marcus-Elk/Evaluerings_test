@@ -15,6 +15,9 @@
     <script src="./create_test.js" defer></script>
 </head>
 <body>
+
+    <input id="test_title" name="title" placeholder="Title"></input>
+    <br>
     
     <label for="teams_select">Choose a team:</label>
     <select id="teams_select" name="teams_select_name">
@@ -37,16 +40,30 @@
     </div>
     
     <button type="button" id="add_question">Add questions</button>
+    <br>
+    <button type="button" id="save_test">Publish Test</button>
 
     <div style="display:none" class="template" id="question_template"> <!--Lav ydre div hidden ("display:none")-->
         <div class="question">
-            <input name="title" placeholder="Title"></input>
+            <input id="question_title" name="title" placeholder="Title"></input>
             <br>
-            <textarea name="text_question" rows="5" cols="100" placeholder="Write the question"></textarea>
+            <textarea id="question_text" name="question_text" rows="5" cols="100" placeholder="Write the question"></textarea>
+            <br>
+            <div id="answer_options">
+
+            </div>
             <button type="button" id="add_answer">Add answer</button>
+            <br>
+            <label for="select_correct_answer">Choose correct answer: </label>
+            <select id="select_correct_answer" name="select_correct_answer">
+
+            </select>
         </div>
         
          
+    </div>
+    <div style="display:none" class="template" id="answer_template">
+        <textarea class="answer" id="answer_text" name="answer_text" rows="3" cols="30" placeholder="Write the answer"></textarea>
     </div>
 </body>
 </html>
