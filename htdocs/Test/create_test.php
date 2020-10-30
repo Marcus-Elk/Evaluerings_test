@@ -54,16 +54,16 @@
             </div>
             <button type="button" id="add_answer">Add answer</button>
             <br>
-            <label for="select_correct_answer">Choose correct answer: </label>
-            <select id="select_correct_answer" name="select_correct_answer">
-
-            </select>
+            
         </div>
         
          
     </div>
     <div style="display:none" class="template" id="answer_template">
-        <textarea class="answer" id="answer_text" name="answer_text" rows="3" cols="30" placeholder="Write the answer"></textarea>
+        <div class="answer">
+            <textarea id="answer_text" name="answer_text" rows="3" cols="30" placeholder="Write the answer"></textarea> <!--css kode: https://www.w3schools.com/howto/howto_css_switch.asp-->
+            <input id="is_correct" type="checkbox">
+        </div>
     </div>
 </body>
 </html>

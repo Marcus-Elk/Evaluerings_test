@@ -15,20 +15,25 @@ $(document).ready(function() {
         $("#test .question").each(function(q_index, q_element){
             let answers = [];
             $(q_element).find("#answer_options .answer").each(function(a_index, a_element){
+                
+                let isChecked = 0;
+                if($(a_element).children("#is_correct").is(":checked")){
+                    isChecked = 1;
+                }
                 answers.push({
-                    text: $(a_element).val().trim()
+                    text: $(a_element).children("#answer_text").val().trim(),
+                    is_correct: isChecked
                 });
             });
             test.questions.push({
                 title: $(q_element).children("#question_title").val().trim(),
                 text: $(q_element).children("#question_text").val().trim(),
                 answers: answers,
-                correct_answer: 0
             });
 
         });
 
-        console.log(test);
+        //console.log(test);
 
         /*let json = JSON.stringify(test);
         $.ajax({
