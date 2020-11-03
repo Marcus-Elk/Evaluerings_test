@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="stylesheet.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
@@ -18,26 +19,16 @@
 <body>
 
     <div id="message"></div>
-    <div class="container" id="signup_form">
+    <div class="container" id="signup-form">
+        <h1>Sign up</h1>
 
-		<label for="first_name">First name:</label>
-        <input type="text" id="first_name" required>
+        <input type="text" id="first_name" placeholder = "First name" required>
+        <input type="text" id="last_name" placeholder = "Last name" required>
+        <input type="password" id="password" placeholder = "Password" required>
+        <input type="password" id="password_" placeholder = "Confirm Password" required>
         <br>
-
-        <label for="last_name">Last name:</label>
-        <input type="text" id="last_name" required>
-		<br>
-        
-        <label for="password">Password:</label>
-        <input type="password" id="password" required>
         <br>
-        
-        <label for="password_">Confirm password:</label>
-        <input type="password" id="password_" required>
-        <br>
-        
-        <label for="team_select">Choose team:</label>
-        <select id="team_select">
+        <select id="team_select" placeholder = "Choose Team">
             <?php
                 $sqlTeams = "SELECT `id`, `name` FROM `teams`;";
                 $result = mysqli_query($db,$sqlTeams);
@@ -52,7 +43,7 @@
             ?>
         </select>
         <br>
-
+        <br>
 		<button type="button" id="submit">Sign up</button>
 	</div>
 

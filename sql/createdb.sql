@@ -47,7 +47,7 @@ INSERT INTO `users`(`first_name`, `last_name`, `username`, `password_hash`, `rol
     'Friis',
     'vald0172',
     '$2y$10$XlnmtUeiTLCCvxKx9UGJb.1eCnf5iBqRmDd4.UVhRCvxH6mtr.sD6',
-    0b00000101,
+    0b00000111,
     1
 );
 
@@ -59,4 +59,21 @@ INSERT INTO `users`(`first_name`, `last_name`, `username`, `password_hash`, `rol
     0b00000111,
     1
 );
+INSERT INTO `users`(`first_name`, `last_name`, `username`, `password_hash`, `roles`, `team_id`) VALUES(
+	'Muhammad Muneeb',
+    'Farooq',
+    'Muha6969',
+    '$2y$10$XlnmtUeiTLCCvxKx9UGJb.1eCnf5iBqRmDd4.UVhRCvxH6mtr.sD6',
+    0b00000111,
+    1
+);
+
+INSERT INTO `tests`(`title`, `team_id`) VALUES('Test test', 1);
+INSERT INTO `questions`(`title`, `text`, `test_id`) VALUES('Q1', 'Q1 text', 1);
+INSERT INTO `answer_options`(`text`, `is_correct`, `question_id`) VALUES('Q1 A1', 0, 1);
+INSERT INTO `answer_options`(`text`, `is_correct`, `question_id`) VALUES('Q1 A2', 1, 1);
+
+INSERT INTO `questions`(`title`, `text`, `test_id`) VALUES('Q2', 'Q2 text', 1);
+INSERT INTO `answer_options`(`text`, `is_correct`, `question_id`) VALUES('Q2 A1', 1, 2);
+INSERT INTO `answer_options`(`text`, `is_correct`, `question_id`) VALUES('Q2 A2', 0, 2);
 

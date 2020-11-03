@@ -15,11 +15,14 @@
     <script src="./create_test.js" defer></script>
 </head>
 <body>
+
+    <input id="test_title" name="title" placeholder="Title"></input>
+    <br>
     
-    <label for="teams_select">Choose a team:</label>
-    <select id="teams_select" name="teams_select_name">
+    <label for="team_select">Choose a team:</label>
+    <select id="team_select" name="team_select_name">
         <?php
-            $sqlTeams = "SELECT `name` FROM `teams`;";
+            $sqlTeams = "SELECT * FROM `teams`;";
             $result = mysqli_query($db,$sqlTeams);
             
             if(!$result){
@@ -37,16 +40,30 @@
     </div>
     
     <button type="button" id="add_question">Add questions</button>
+    <br>
+    <button type="button" id="save_test">Publish Test</button>
 
     <div style="display:none" class="template" id="question_template"> <!--Lav ydre div hidden ("display:none")-->
         <div class="question">
-            <input name="title" placeholder="Title"></input>
+            <input id="question_title" name="title" placeholder="Title"></input>
             <br>
-            <textarea name="text_question" rows="5" cols="100" placeholder="Write the question"></textarea>
+            <textarea id="question_text" name="question_text" rows="5" cols="100" placeholder="Write the question"></textarea>
+            <br>
+            <div id="answer_options">
+
+            </div>
             <button type="button" id="add_answer">Add answer</button>
+            <br>
+            
         </div>
         
          
+    </div>
+    <div style="display:none" class="template" id="answer_template">
+        <div class="answer">
+            <textarea id="answer_text" name="answer_text" rows="3" cols="30" placeholder="Write the answer"></textarea> <!--css kode: https://www.w3schools.com/howto/howto_css_switch.asp-->
+            <input id="is_correct" type="checkbox">
+        </div>
     </div>
 </body>
 </html>

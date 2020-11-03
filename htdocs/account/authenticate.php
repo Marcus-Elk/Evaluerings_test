@@ -41,6 +41,7 @@
 		$_SESSION['first_name']	= $row['first_name'];
 		$_SESSION['last_name']	= $row['last_name'];
 		$_SESSION['user_roles'] = $row['roles'];
+		$_SESSION['team_id']	= $row['team_id'];
 
 		die(json_encode(array(
 			'result' => 0,
