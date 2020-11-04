@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
 
 	$("#submit").click(function() {
@@ -9,7 +8,7 @@ $(document).ready(function() {
 		if(username !== "" && password !== "") {
 			
 			$.ajax({
-				url:  'authenticate.php',
+				url:  './account/authenticate.php',
 				type: 'post',
 				data: {
 					username:	username,

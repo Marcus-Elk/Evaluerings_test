@@ -1,12 +1,18 @@
+<?php
+    include("./navbar/navbar.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	
+	<link rel="stylesheet" href="./style/stylesheet.css">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Login</title>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
-	<script src="./login.js" defer></script>
+	<script src="./account/login.js" defer></script>
 </head>
 <body>
 

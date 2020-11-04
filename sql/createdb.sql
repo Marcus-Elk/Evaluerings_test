@@ -42,6 +42,7 @@ CREATE TABLE `answer_options`(
 );
 
 INSERT INTO `teams`(`name`) VALUES('L DDU TK 2');
+INSERT INTO `teams`(`name`) VALUES('L DDU TK 1');
 INSERT INTO `users`(`first_name`, `last_name`, `username`, `password_hash`, `roles`, `team_id`) VALUES(
 	'Valdemar',
     'Friis',

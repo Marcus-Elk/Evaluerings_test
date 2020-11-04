@@ -1,0 +1,133 @@
+body {
+    margin: 100;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(0, 32, 78);
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    padding-bottom: 75px ;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    text-align: center;
+    background:rgb(0, 32, 78);
+    background: linear-gradient(180deg, rgba(41, 40, 47, 1) 51%, rgba(54, 54, 59, 1) 100%);
+}
+
+.container input[type="text"],
+.container input[type="Password"] {
+    color: white;
+    position: relative;
+    top: 20px;
+    width: 280px;
+    text-align: center;
+    border: 0;
+    background: none;
+    margin: 10px auto;
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 14px 10px;
+    outline: none;
+}
+
+.container h1 {
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.container input[type="button"] {
+    position: relative;
+    top: 100;
+    text-align: center;
+}
+
+
+.container input[type="button"] {
+
+    position: relative;
+    color: white;
+    width: 75px;
+    text-align: center;
+    border: 0;
+    background: none;
+    margin: 10px auto;
+    border: 2px solid rgb(0, 138, 0);
+    border-radius: 10px;
+    padding: 14px 10px;
+    outline: none;
+}
+
+p.text {
+color: white;
+    
+}
+p.text2 {
+    color: lightgrey;  
+}
+
+
+/* Select list */
+/* The container must be positioned relative: */
+.custom-select {
+    position: relative;
+    font-family: Arial;
+  }
+  
+  .custom-select select {
+    display: none; /*hide original SELECT element: */
+  }
+  
+  .select-selected {
+    background-color: DodgerBlue;
+  }
+  
+  /* Style the arrow inside the select element: */
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+  
+  /* Point the arrow upwards when the select box is open (active): */
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+  }
+  
+  /* style the items (options), including the selected item: */
+  .select-items div,.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+  }
+  
+  /* Style items (options): */
+  .select-items {
+    position: absolute;
+    background-color: DodgerBlue;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+  
+  /* Hide the items when the select box is closed: */
+  .select-hide {
+    display: none;
+  }
+  
+  .select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  }

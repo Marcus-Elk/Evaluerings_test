@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $("#add_answer").click(function() {
-        $("#answer_template .answer").clone(true).appendTo($(this).parent().children("#answer_options"));
+        $("#answer_template .answer").clone(true).appendTo($(this).parent().parent().children("#answer_options"));
     });
 	$("#add_question").click(function() {
         $("#question_template .question").clone(true).appendTo("#test");

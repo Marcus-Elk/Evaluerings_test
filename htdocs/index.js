@@ -2,7 +2,7 @@
 $(document).ready(function() {
 	$("#import").click(function() {
 		$.ajax({
-			url: 'import_data.php',
+			url: './import/import_data.php',
 			type: 'get',
 			success: function(response) {
 				response = $.trim(response);
