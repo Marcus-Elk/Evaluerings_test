@@ -61,12 +61,7 @@ main {
 	display: block;
 }
 
-.nav-link:active {
-	background-color: #4CAF50;
-	color: white;
-}
-
-.nav-link:hover:not(:active) {
+.nav-link:hover {
 	background-color: #555;
 	color: white;
 }
