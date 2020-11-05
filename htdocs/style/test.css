@@ -20,5 +20,16 @@
 	max-height: 0px;
 	margin: 0;
 	background: #282828;
-	transition: max-height 200ms ease-out;
+}
+
+.answers {
+	list-style-type: none;
+	display: flex;
+	justify-content: space-evenly;
+	padding: 0;
+}
+
+.answer input {
+	margin: auto;
+	width: 100%;
 }

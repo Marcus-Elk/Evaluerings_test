@@ -54,13 +54,13 @@
 
 		?>
 		
-		<div class="question">
+		<div class="question" id="q<?=$q_id?>">
 			<button class="question-toggle" type="button">
 				<h2 class="question-title"><?= $q_title ?></h2>
 			</button>
 			<div class="question-content">
 				<p class="question-text"><?= $q_text ?></p>
-				<div class="answers">
+				<ul class="answers">
 
 					<?php
 						$query		= "SELECT `id`, `text` FROM `answer_options` WHERE `question_id`=$q_id;";
@@ -70,14 +70,14 @@
 							$a_id	= $a_row['id'];
 							$a_text	= $a_row['text'];
 					?>
-					<div class="answer">
+					<li class="answer">
 						<p class="answer-text"><?=$a_text?></p>
-						<input type="radio" name="<?=$q_id?>" value="<?=$a_id?>"></input>
-					</div>
+						<input type="radio" id="a<?=$a_id?>" name="<?=$q_id?>" value="<?=$a_id?>"></input>
+					</li>
 					<?php
 						}
 					?>
-				</div>
+				</ul>
 			</div>
 		</div>
 		<?php
@@ -85,7 +85,7 @@
 		?>
 	</div>
 
-	<button type="button">Submit answers</button>
+	<button class="submit-button" type="button">Submit answers</button>
 
 </main>
 </body>

@@ -35,7 +35,7 @@
             }
             ?>
 
-        <?php   
+        <?php
         } else {
             echo("<p class = \"text\">You are not logged in</p>");
         }
