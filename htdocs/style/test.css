@@ -17,7 +17,8 @@
 
 .question-content {
 	overflow: hidden;
-	transition: max-height 200ms ease-out;
+	max-height: 0px;
 	margin: 0;
 	background: #282828;
+	transition: max-height 200ms ease-out;
 }
