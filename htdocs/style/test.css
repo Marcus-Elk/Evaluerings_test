@@ -20,6 +20,11 @@
 	max-height: 0px;
 	margin: 0;
 	background: #282828;
+	transition: max-height 200ms ease-in-out;
+}
+
+.question-text {
+	padding: 1rem;
 }
 
 .answers {
@@ -30,6 +35,35 @@
 }
 
 .answer input {
-	margin: auto;
-	width: 100%;
+	opacity: 0;
+	position: fixed;
+	width: 0;
 }
+
+.answer label {
+	display: inline-block;
+	cursor: pointer;
+	padding: 1rem;
+}
+
+.answer input:checked + label {
+	border: 1px solid white;
+}
+
+.submit-button {
+	display: inline-block;
+	padding: 0.5em 2em;
+	border: 0.1em solid white;
+	border-radius: 2em;
+	text-decoration: none;
+	text-align: center;
+	color: white;
+	background-color: transparent;
+	transition: all 200ms;
+}
+
+.submit-button:hover {
+	background-color: white;
+	color: black;
+}
+

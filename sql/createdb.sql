@@ -61,3 +61,53 @@ INSERT INTO `users`(`first_name`, `last_name`, `username`, `password_hash`, `rol
     1
 );
 
+
+INSERT INTO `tests`(`title`, `team_id`) VALUES('Trigonometri', 1);
+INSERT INTO `questions`(`title`, `text`, `test_id`) VALUE(
+	'Tangens',
+    'Hvordan kan `tan(x)` også udtrykkes?',
+    1
+);
+INSERT INTO `answer_options`(`text`, `is_correct`, `question_id`) VALUES(
+	'`1/sin(x)`',
+    0,
+    1
+);
+INSERT INTO `answer_options`(`text`, `is_correct`, `question_id`) VALUES(
+	'`sin(x)/cos(x)`',
+    1,
+    1
+);
+INSERT INTO `answer_options`(`text`, `is_correct`, `question_id`) VALUES(
+	'`cos(x/2)`',
+    0,
+    1
+);
+
+INSERT INTO `questions`(`title`, `text`, `test_id`) VALUE(
+	'Sinus',
+    'Hvilket af følgende udtryk er sandt?',
+    1
+);
+INSERT INTO `answer_options`(`text`, `is_correct`, `question_id`) VALUES(
+	'`sin(x)=-sin(x)`',
+    0,
+    2
+);
+INSERT INTO `answer_options`(`text`, `is_correct`, `question_id`) VALUES(
+	'`sin(x)=-cos(x)`',
+    0,
+    2
+);
+INSERT INTO `answer_options`(`text`, `is_correct`, `question_id`) VALUES(
+	'`sin(-x)=-sin(x)`',
+    1,
+    2
+);
+INSERT INTO `answer_options`(`text`, `is_correct`, `question_id`) VALUES(
+	'`2sin(x)=sin(2x)`',
+    0,
+    2
+);
+
+

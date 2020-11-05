@@ -71,8 +71,8 @@
 							$a_text	= $a_row['text'];
 					?>
 					<li class="answer">
-						<p class="answer-text"><?=$a_text?></p>
 						<input type="radio" id="a<?=$a_id?>" name="<?=$q_id?>" value="<?=$a_id?>"></input>
+						<label class="answer-text" for="a<?=$a_id?>"><?=$a_text?></label>
 					</li>
 					<?php
 						}

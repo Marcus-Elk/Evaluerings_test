@@ -16,6 +16,7 @@ $(document).ready(function() {
 		});
 	});
 
+
 	$(".submit-button").click(function() {
 		let test = {
 			questions: []
