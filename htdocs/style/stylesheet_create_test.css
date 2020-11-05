@@ -16,7 +16,8 @@ body{
     display: flex;
     flex-direction: column;
 }
-.question_title {
+
+.question-title {
     padding-top: 3px;
     padding-bottom: 3px;
 }
@@ -68,5 +69,5 @@ button input[type="button"] {
 .template {
     display: none;
     margin: 0;
-  }
+}
   

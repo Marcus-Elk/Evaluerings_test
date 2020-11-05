@@ -47,33 +47,33 @@
     <div id="test">
 
     </div>
-    <button type="button" id="add_question">Add questions</button>
-    <button type="button" id="save_test">Publish Test</button>
+    <button type="button" class="add-question">Add questions</button>
+    <button type="button" class="save">Publish Test</button>
 </main>
     
-    <div class="template" id="question_template"> <!--Lav ydre div hidden ("display:none")-->
+    <div class="template" id="question-template"> <!--Lav ydre div hidden ("display:none")-->
         <div class="question">
             
-            <div class="question_title">
-                <input type="text" id="question_title" name="title" placeholder="Give the question a title"></input>
+            <div class="question-title">
+                <input class="title-field" name="title" type="text" placeholder="Give the question a title"></input>
             </div>
-            <div class="question_textarea">
-                <textarea id="question_text" name="question_text" rows="5" cols="100" placeholder="Write the question"></textarea>
+            <div class="question-text">
+                <textarea class="text-field" name="question-text" rows="5" cols="100" placeholder="Write the question"></textarea>
             </div>
-            <div id="answer_options">
+            <div class="answer-options">
 
             </div>
-            <div class="add_answer_button">
-                <button type="button" id="add_answer">Add answer</button>
+            <div>
+                <button type="button" class="add-answer">Add answer</button>
             </div>  
             <div class="white-line"></div>
         </div>
     </div>
 
-    <div class="template" id="answer_template">
+    <div class="template" id="answer-template">
         <div class="answer">
-            <textarea id="answer_text" name="answer_text" rows="3" cols="30" placeholder="Write the answer"></textarea> <!--css kode: https://www.w3schools.com/howto/howto_css_switch.asp-->
-            <input id="is_correct" type="checkbox">
+            <textarea class="text-field" name="answer-text" rows="3" cols="30" placeholder="Write the answer"></textarea> <!--css kode: https://www.w3schools.com/howto/howto_css_switch.asp-->
+            <input type="checkbox">
         </div>
     </div>
 </body>

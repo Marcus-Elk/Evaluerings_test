@@ -48,7 +48,7 @@ INSERT INTO `users`(`first_name`, `last_name`, `username`, `password_hash`, `rol
     'Friis',
     'vald0172',
     '$2y$10$XlnmtUeiTLCCvxKx9UGJb.1eCnf5iBqRmDd4.UVhRCvxH6mtr.sD6',
-    0b00000101,
+    0b00000111,
     1
 );
 
