@@ -53,14 +53,16 @@
 			<div class="answers">
 
 				<?php
-					$query		= "SELECT `text` FROM `answer_options` WHERE `question_id`=$q_id;";
+					$query		= "SELECT `id`, `text` FROM `answer_options` WHERE `question_id`=$q_id;";
 					$a_result	= mysqli_query($db, $query) or die(mysqli_error($db));
 
 					while($a_row = mysqli_fetch_assoc($a_result)) {
+						$a_id	= $a_row['id'];
 						$a_text	= $a_row['text'];
 				?>
 				<div class="answer">
-					<p class="answer-text"><?= $a_text ?></p>
+					<p class="answer-text"><?=$a_text?></p>
+					<input type="radio" name="<?=$q_id?>" value="<?=$a_id?>"></input>
 				</div>
 				<?php
 					}

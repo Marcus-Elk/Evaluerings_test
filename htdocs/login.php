@@ -1,7 +1,3 @@
-<?php
-    include("./navbar/navbar.php");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +11,9 @@
 	<script src="./account/login.js" defer></script>
 </head>
 <body>
+	<?php include("./include/navbar.php"); ?>
 
+<main>
 	<div id="msg"></div>
 	
 	<div class="container" id="login_form">
@@ -27,6 +25,7 @@
 		<br>
 		<button type="submit" id="submit">Login</button>
 	</div>
+</main>
 	
 </body>
 </html>
