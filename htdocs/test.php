@@ -7,14 +7,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Test</title>
+	<link rel="stylesheet" href="./style/stylesheet.css">
+	<link rel="stylesheet" href="./style/test.css">
 	
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+	<script src="./js/load_mathjax.js" defer></script>
+	<script src="./js/test.js" defer></script>
 
+	<title>Test</title>
 </head>
 <body>
+<?php include("./include/navbar.php"); ?>
 
+<main>
 	<?php
         $t_id = intval($_GET['t']);
         
@@ -28,7 +36,6 @@
 		if($t_team_id != $_SESSION['team_id']) {
 			die("This test is not for you.");
 		}
-
 	?>
 
 	<h1 class="test-title">
@@ -48,35 +55,38 @@
 		?>
 		
 		<div class="question">
-			<h2 class="question-title"><?= $q_title ?></h2>
-			<p class="question-text"><?= $q_text ?></p>
-			<div class="answers">
+			<button class="question-toggle" type="button">
+				<h2 class="question-title"><?= $q_title ?></h2>
+			</button>
+			<div class="question-content">
+				<p class="question-text"><?= $q_text ?></p>
+				<div class="answers">
 
-				<?php
-					$query		= "SELECT `id`, `text` FROM `answer_options` WHERE `question_id`=$q_id;";
-					$a_result	= mysqli_query($db, $query) or die(mysqli_error($db));
+					<?php
+						$query		= "SELECT `id`, `text` FROM `answer_options` WHERE `question_id`=$q_id;";
+						$a_result	= mysqli_query($db, $query) or die(mysqli_error($db));
 
-					while($a_row = mysqli_fetch_assoc($a_result)) {
-						$a_id	= $a_row['id'];
-						$a_text	= $a_row['text'];
-				?>
-				<div class="answer">
-					<p class="answer-text"><?=$a_text?></p>
-					<input type="radio" name="<?=$q_id?>" value="<?=$a_id?>"></input>
+						while($a_row = mysqli_fetch_assoc($a_result)) {
+							$a_id	= $a_row['id'];
+							$a_text	= $a_row['text'];
+					?>
+					<div class="answer">
+						<p class="answer-text"><?=$a_text?></p>
+						<input type="radio" name="<?=$q_id?>" value="<?=$a_id?>"></input>
+					</div>
+					<?php
+						}
+					?>
 				</div>
-				<?php
-					}
-				?>
 			</div>
 		</div>
 		<?php
 			}
 		?>
-
-
 	</div>
 
+	<button type="button">Submit answers</button>
 
-    
+</main>
 </body>
 </html>

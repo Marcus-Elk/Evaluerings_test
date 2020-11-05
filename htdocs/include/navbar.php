@@ -27,33 +27,34 @@
 		</li>
 	<?php endif;?>
 <?php endif;?>
-
-		<ul class="nav-list" id="nav-acc-list">
+		<li class="nav-item">
+			<ul class="nav-list">
 
 <?php if(isset($_SESSION['user_id'])): ?>
-			<li class="nav-item">
-					<a class="nav-link" href="./account/logout.php">
-						<img class="nav-icon" src="./icon/logout.svg">
-						<span class="nav-text">Sign out</span>
-					</a>
-			</li>
+				<li class="nav-item">
+						<a class="nav-link" href="./account/logout.php">
+							<img class="nav-icon" src="./icon/logout.svg">
+							<span class="nav-text">Sign out</span>
+						</a>
+				</li>
 <?php else: ?>
-			<li class="nav-item">
-				<a class="nav-link" href="login.php">
-					<img class="nav-icon" src="./icon/login.svg">
-					<span class="nav-text">Sign in</span>
-				</a>
-			</li>
+				<li class="nav-item">
+					<a class="nav-link" href="login.php">
+						<img class="nav-icon" src="./icon/login.svg">
+						<span class="nav-text">Sign in</span>
+					</a>
+				</li>
 
-			<li class="nav-item">
-				<a class="nav-link" href="signup.php">
-					<img class="nav-icon" src="./icon/create_account.svg">
-					<span class="nav-text">Sign up</span>
-				</a>
-			</li>
+				<li class="nav-item">
+					<a class="nav-link" href="signup.php">
+						<img class="nav-icon" src="./icon/create_account.svg">
+						<span class="nav-text">Sign up</span>
+					</a>
+				</li>
 <?php endif; ?>
 
-		</ul>
+			</ul>
+		</li>
 	</ul> 
 </nav>
 

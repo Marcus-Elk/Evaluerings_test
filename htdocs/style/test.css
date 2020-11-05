@@ -1,0 +1,23 @@
+
+.question {
+	margin-bottom: 1rem;
+}
+
+.question-toggle {
+	margin: 0;
+	padding: 0 18px;
+	width: 100%;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	text-align: left;
+	background-color: #2F2F2F;
+	color: white;
+}
+
+.question-content {
+	overflow: hidden;
+	transition: max-height 200ms ease-out;
+	margin: 0;
+	background: #282828;
+}
