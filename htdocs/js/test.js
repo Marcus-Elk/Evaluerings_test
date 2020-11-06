@@ -18,23 +18,38 @@ $(document).ready(function() {
 
 
 	$(".submit-button").click(function() {
+		
 		let test = {
-			questions: []
+			answers: []
 		}
 
 		$(".question").each(function(index) {
-			let q_id = this.id.substring(1);
-			let a_id = $("input[name="+q_id+"]:checked").val();
-
-			let question = {
-				id: q_id,
-				answer: a_id
-			}
-
-			test.questions.push(question);
+			let q_id = parseInt(this.id.substring(1));
+			let a_id = parseInt($("input[name="+q_id+"]:checked").val());
+			test.answers.push(a_id);
 		});
 
-		// TODO: send test to server
+		console.log(test);
+
+		$.ajax({
+			url:'./test/push_answer.php',
+			method: 'POST',
+			data: {
+				json: JSON.stringify(test)
+			},
+			success: function(response) {
+				alert(response);
+
+				// let json = JSON.parse(response);
+
+				// if(json.result == 0) {
+				// 	alert("success");
+				// } else {
+				// 	alert("failure");
+				// }
+
+			}
+		});
 
 	});
 

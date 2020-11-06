@@ -41,6 +41,14 @@ CREATE TABLE `answer_options`(
 	FOREIGN KEY (`question_id`) REFERENCES `questions`(`id`)
 );
 
+CREATE TABLE `results`(
+	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `answer_option_id` INT NOT NULL,
+    `user_id` INT NOT NULL,
+	FOREIGN KEY (`answer_option_id`) REFERENCES `answer_options`(`id`),
+	FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)
+);
+
 INSERT INTO `teams`(`name`) VALUES('L DDU TK 2');
 INSERT INTO `teams`(`name`) VALUES('L DDU TK 1');
 INSERT INTO `users`(`first_name`, `last_name`, `username`, `password_hash`, `roles`, `team_id`) VALUES(
@@ -61,6 +69,8 @@ INSERT INTO `users`(`first_name`, `last_name`, `username`, `password_hash`, `rol
     1
 );
 
+<<<<<<< HEAD
+=======
 INSERT INTO `users`(`first_name`, `last_name`, `username`, `password_hash`, `roles`, `team_id`) VALUES(
 	'Muhammad Muneeb',
     'Farooq',
@@ -87,6 +97,7 @@ INSERT INTO `users`(`first_name`, `last_name`, `username`, `password_hash`, `rol
 );
 
 
+>>>>>>> Muhammad
 INSERT INTO `tests`(`title`, `team_id`) VALUES('Trigonometri', 1);
 INSERT INTO `questions`(`title`, `text`, `test_id`) VALUE(
 	'Tangens',

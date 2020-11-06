@@ -22,7 +22,7 @@
 <main>
 	<div id="message"></div>
 	<div class="container" id="signup_form">
-	<H1> Sign Up </H1>
+	<h1> Sign Up </h1>
 		
 		<input type="text" id="first_name" placeholder = "First Name" required>
 		<br>
@@ -41,7 +41,7 @@
 		<br>
 		
 		<label for="team_select">Choose team:</label>
-		<select id="team_select">
+		<select class="custom-select" id="team_select">
 			<?php
 				$sqlTeams = "SELECT `id`, `name` FROM `teams`;";
 				$result = mysqli_query($db,$sqlTeams);

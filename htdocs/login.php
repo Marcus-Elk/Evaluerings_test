@@ -17,7 +17,7 @@
 	<div id="msg"></div>
 	
 	<div class="container" id="login_form">
-		<H1> Login </H1>
+		<h1> Login </h1>
 		<input type="text" id="username" placeholder = "Username" required>
 		<br>
 		<input type="password" id="password" placeholder = "Password" required>
