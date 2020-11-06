@@ -1,0 +1,75 @@
+
+main {
+	margin-left: 5rem;
+	padding: 1rem;
+}
+
+.navbar {
+	width: 5rem;
+	height: 100vh;
+	position: fixed;
+	background-color: #202020;
+	z-index: 1; /* mathjax equations display above it unless this is used */
+	transition: width 200ms ease;
+}
+
+.nav-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+}
+
+.nav-item {
+	width: 100%;
+}
+
+.nav-item:last-child {
+	margin-top: auto;
+}
+
+.nav-link {
+	display: flex;
+	align-items: center;
+	height: 5rem;
+	color: white;
+	text-decoration: none;
+	white-space: nowrap;
+	transition: 200ms;
+}
+
+.nav-icon {
+	min-width: 2.5rem;
+	margin-left: 1.25rem;
+	filter: grayscale(100%);
+	transition: 500ms;
+}
+
+.nav-link:hover .nav-icon {
+	filter: none;
+}
+
+.nav-text {
+	display: none;
+	margin-left: 1rem;
+}
+
+.navbar:hover {
+	width: 15rem;
+}
+
+.navbar:hover .nav-text {
+	display: block;
+}
+
+.nav-link:hover {
+	background-color: #555;
+	color: white;
+}
+
+.nav-link.current {
+	background-color: #0F0F0F;
+}
