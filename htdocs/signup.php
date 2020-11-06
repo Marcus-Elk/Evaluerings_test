@@ -40,7 +40,7 @@
 		<br>
 		
 		<label for="team_select">Choose team:</label>
-		<select id="team_select">
+		<select class="custom-select" id="team_select">
 			<?php
 				$sqlTeams = "SELECT `id`, `name` FROM `teams`;";
 				$result = mysqli_query($db,$sqlTeams);

@@ -71,3 +71,25 @@ button input[type="button"] {
     margin: 0;
 }
   
+
+.custom-select {
+    display: none;
+}
+
+.select {
+    display: inline-flex;
+    flex-direction: column;
+    background: blue;
+    list-style-type: none;
+    padding: 0;
+}
+
+.select li {
+    background: red;
+    display: none;
+}
+
+
+.select .visible {
+    display: inherit;
+}

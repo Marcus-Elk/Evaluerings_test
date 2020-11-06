@@ -16,6 +16,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <script src="./test/create_test.js" defer></script>
+    <script src="./style/select_list.js" defer></script>
 
 </head>
 <body>
@@ -27,7 +28,7 @@
         <input class="title" type="text" id="test_title" name="title" placeholder="Title"></input>
         <div class="choose_team">
             <label type="text" for="team_select">Choose a team:</label>
-            <select id="team_select" name="team_select_name">
+            <select class="custom-select" id="team_select" name="team_select_name">
                 <?php
                     $sqlTeams = "SELECT * FROM `teams`;";
                     $result = mysqli_query($db,$sqlTeams);
