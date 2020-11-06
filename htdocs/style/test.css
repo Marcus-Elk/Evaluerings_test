@@ -11,15 +11,15 @@
 	border: none;
 	outline: none;
 	text-align: left;
-	background-color: #2F2F2F;
-	color: white;
+	background-color: #1d3e53;
+	color: #fffff0;
 }
 
 .question-content {
 	overflow: hidden;
 	max-height: 0px;
 	margin: 0;
-	background: #282828;
+	background: #254b62;
 	transition: max-height 200ms ease-in-out;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .answer input:checked + label {
-	border: 1px solid white;
+	background: #476D7C;
 }
 
 .submit-button {
@@ -60,6 +60,7 @@
 	color: white;
 	background-color: transparent;
 	transition: all 200ms;
+	outline: none;
 }
 
 .submit-button:hover {

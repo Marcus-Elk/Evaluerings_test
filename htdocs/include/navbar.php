@@ -3,6 +3,8 @@
 
 <nav class="navbar">
 	<link rel="stylesheet" href="./style/navbar.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
 	<script src="./js/navbar.js" defer></script>
 

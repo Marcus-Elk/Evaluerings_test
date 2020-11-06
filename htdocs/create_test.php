@@ -9,7 +9,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="./style/stylesheet_create_test.css">
+    <link rel="stylesheet" href="./style/stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create a Test</title>
@@ -22,12 +23,12 @@
 <body>
 <?php include("./include/navbar.php"); ?>
     
-<main class="container">
+<main class="container2">
     <h1 type="text">Create a test</h1>
-    <div class="container_top">
-        <input class="title" type="text" id="test_title" name="title" placeholder="Title"></input>
+    <div class="container2_top">
+        <input class="title" type="text" id="test_title" name="title" placeholder="Title"> </input>
         <div class="choose_team">
-            <label type="text" for="team_select">Choose a team:</label>
+            <label class="bold" type="text" for="team_select">Choose a team:</label>
             <select class="custom-select" id="team_select" name="team_select_name">
                 <?php
                     $sqlTeams = "SELECT * FROM `teams`;";

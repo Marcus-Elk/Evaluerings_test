@@ -8,7 +8,7 @@ main {
 	width: 5rem;
 	height: 100vh;
 	position: fixed;
-	background-color: #202020;
+	background-color: #1D3E53;
 	z-index: 1; /* mathjax equations display above it unless this is used */
 	transition: width 200ms ease;
 }
@@ -35,7 +35,7 @@ main {
 	display: flex;
 	align-items: center;
 	height: 5rem;
-	color: white;
+	color:  #77ABB7;
 	text-decoration: none;
 	white-space: nowrap;
 	transition: 200ms;
@@ -66,10 +66,10 @@ main {
 }
 
 .nav-link:hover {
-	background-color: #555;
+	background-color: #254B62;
 	color: white;
 }
 
 .nav-link.current {
-	background-color: #0F0F0F;
+	background-color: #476D7C;
 }

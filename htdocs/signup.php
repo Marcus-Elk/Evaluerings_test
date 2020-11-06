@@ -22,21 +22,22 @@
 <main>
 	<div id="message"></div>
 	<div class="container" id="signup_form">
-
-		<label for="first_name">First name:</label>
-		<input type="text" id="first_name" required>
+	<h1> Sign Up </h1>
+		
+		<input type="text" id="first_name" placeholder = "First Name" required>
 		<br>
 
-		<label for="last_name">Last name:</label>
-		<input type="text" id="last_name" required>
+
+		<input type="text" id="last_name" placeholder = "Last Name" required>
 		<br>
 		
-		<label for="password">Password:</label>
-		<input type="password" id="password" required>
+
+		<input type="password" id="password" placeholder = "Password" required>
 		<br>
 		
-		<label for="password_">Confirm password:</label>
-		<input type="password" id="password_" required>
+
+		<input type="password" id="password_" placeholder = "Confirm Password" required>
+		<br>
 		<br>
 		
 		<label for="team_select">Choose team:</label>
