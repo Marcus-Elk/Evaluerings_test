@@ -61,6 +61,31 @@ INSERT INTO `users`(`first_name`, `last_name`, `username`, `password_hash`, `rol
     1
 );
 
+INSERT INTO `users`(`first_name`, `last_name`, `username`, `password_hash`, `roles`, `team_id`) VALUES(
+	'Muhammad Muneeb',
+    'Farooq',
+    'muha6969',
+    '$2y$10$XlnmtUeiTLCCvxKx9UGJb.1eCnf5iBqRmDd4.UVhRCvxH6mtr.sD6',
+    0b00000111,
+    1
+);
+INSERT INTO `users`(`first_name`, `last_name`, `username`, `password_hash`, `roles`, `team_id`) VALUES(
+	'Teacher',
+    'Teacher',
+    'Teacher',
+    '$2y$10$XlnmtUeiTLCCvxKx9UGJb.1eCnf5iBqRmDd4.UVhRCvxH6mtr.sD6',
+    0b00000010,
+    1
+);
+INSERT INTO `users`(`first_name`, `last_name`, `username`, `password_hash`, `roles`, `team_id`) VALUES(
+	'Student',
+    'Student',
+    'Studnet',
+    '$2y$10$XlnmtUeiTLCCvxKx9UGJb.1eCnf5iBqRmDd4.UVhRCvxH6mtr.sD6',
+    0b00000001,
+    1
+);
+
 
 INSERT INTO `tests`(`title`, `team_id`) VALUES('Trigonometri', 1);
 INSERT INTO `questions`(`title`, `text`, `test_id`) VALUE(

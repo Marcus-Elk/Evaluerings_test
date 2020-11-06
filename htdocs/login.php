@@ -17,11 +17,11 @@
 	<div id="msg"></div>
 	
 	<div class="container" id="login_form">
-		<label for="username"><b>Username:</b></label>
-		<input type="text" id="username" required>
+		<H1> Login </H1>
+		<input type="text" id="username" placeholder = "Username" required>
 		<br>
-		<label for="password"><b>Password:</b></label>
-		<input type="password" id="password" required>
+		<input type="password" id="password" placeholder = "Password" required>
+		<br>
 		<br>
 		<button type="submit" id="submit">Login</button>
 	</div>
