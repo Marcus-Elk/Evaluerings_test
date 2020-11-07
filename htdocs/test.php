@@ -63,6 +63,7 @@
 		<div class="question" id="q<?=$q_id?>">
 			<button class="question-toggle" type="button">
 				<h2 class="question-title"><?= $q_title ?></h2>
+				<h2 class="toggle-symbol">+</h2>
 			</button>
 			<div class="question-content">
 				<p class="question-text"><?= $q_text ?></p>

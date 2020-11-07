@@ -3,6 +3,16 @@ button {
 	font: inherit;
 }
 
+.question-title {
+	padding: 0;
+	display: inline-block;
+}
+
+.toggle-symbol {
+	padding: 0;
+	float: right;
+}
+
 .question {
 	margin-bottom: 1rem;
 }

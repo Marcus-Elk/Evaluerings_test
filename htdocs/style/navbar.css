@@ -44,7 +44,7 @@ main {
 .nav-icon {
 	min-width: 2.5rem;
 	margin-left: 1.25rem;
-	filter: grayscale(100%);
+	filter: grayscale(100%) brightness(1.4);
 	transition: 500ms;
 }
 
@@ -72,4 +72,35 @@ main {
 
 .nav-link.current {
 	background-color: #476D7C;
+}
+
+#logo-link {
+	background-color: #193647;
+}
+
+#logo-link:hover {
+	background-color: #254B62;
+}
+
+#logo-text {
+	text-transform: uppercase;
+	letter-spacing: 0.3rem;
+	display: inline;
+	position: absolute;
+	left: -200px;
+	transition: left 400ms;
+	color: white;
+}
+
+.navbar:hover #logo-text {
+	left: 0px;
+}
+
+#logo-icon {
+	transform: none;
+}
+
+.navbar:hover #logo-icon {
+	margin-left: 11rem;
+	transform: rotate(180deg) scaleY(-1) scaleX(-1);
 }
