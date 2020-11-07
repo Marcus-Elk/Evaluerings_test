@@ -28,6 +28,14 @@
 			</a>
 		</li>
 	<?php endif;?>
+
+		<li class="nav-item">
+			<a class="nav-link" href="#">
+				<img class="nav-icon" src="./icon/scores.svg">
+				<span class="nav-text">View results</span>
+			</a>
+		</li>
+
 <?php endif;?>
 		<li class="nav-item">
 			<ul class="nav-list">

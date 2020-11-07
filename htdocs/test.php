@@ -24,6 +24,12 @@
 
 <main>
 	<?php
+	
+		if(!isset($_GET['t'])) {
+			header("Location: ./view_test.php");
+			die();
+		}
+
         $t_id = intval($_GET['t']);
         
         $query	= "SELECT `title`, `team_id` FROM `tests` WHERE `id`=$t_id;";
