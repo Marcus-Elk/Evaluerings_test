@@ -193,7 +193,7 @@ p.text2 {
 .question input[type="text"]{
     width: 200px;
 }
-.add-question,.save,.add-answer {
+.add-question,.save, .add-answer {
 
         display: inline-block;
         padding: 0.5em 2em;
@@ -241,4 +241,25 @@ letter-spacing: 0.05em;
 
 .wrong {
     color: lightcoral;
+}
+
+.test-options{
+    display: inline-block;
+    padding: 0.2em 0.1em;
+    border: none;
+    font-weight: bold;
+    /*border: 0.1em solid white;*/
+    font-size: larger;
+    text-decoration: none;
+    text-align: center;
+    color: #fffff0;
+    
+    transition: all 200ms;
+    outline: none;
+
+}
+
+.test-options:hover{
+    color: red;
+
 }
