@@ -9,13 +9,21 @@
 	<script src="./js/navbar.js" defer></script>
 
 	<ul class="nav-list">
+
+		<li class="nav-item">
+			<a class="nav-link" id="logo-link" href="index.php">
+				<span class="nav-text" id="logo-text"><b>Math Tests</b></span>
+				<img class="nav-icon" id="logo-icon" src="./icon/logo.svg">
+			</a>
+		</li>
+
 <?php if(isset($_SESSION['user_id'])): ?>
 
 	<?php if(isStudent()): ?>
 		<li class="nav-item">
 			<a class="nav-link" href="view_test.php">
 				<img class="nav-icon" src="./icon/view_test.svg">
-				<span class="nav-text">See tests</span>
+				<span class="nav-text">Available tests</span>
 			</a>
 		</li>
 	<?php endif;?>
@@ -28,6 +36,14 @@
 			</a>
 		</li>
 	<?php endif;?>
+
+		<li class="nav-item">
+			<a class="nav-link" href="#">
+				<img class="nav-icon" src="./icon/scores.svg">
+				<span class="nav-text">Results</span>
+			</a>
+		</li>
+
 <?php endif;?>
 		<li class="nav-item">
 			<ul class="nav-list">

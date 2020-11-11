@@ -1,4 +1,18 @@
 
+button {
+	font: inherit;
+}
+
+.question-title {
+	padding: 0;
+	display: inline-block;
+}
+
+.toggle-symbol {
+	padding: 0;
+	float: right;
+}
+
 .question {
 	margin-bottom: 1rem;
 }
@@ -44,6 +58,8 @@
 	display: inline-block;
 	cursor: pointer;
 	padding: 1rem;
+	border-radius: 100vh;
+	transition: background-color 400ms;
 }
 
 .answer input:checked + label {

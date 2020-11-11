@@ -10,8 +10,10 @@ $(document).ready(function() {
 
 			if (content.style.maxHeight){
 				content.style.maxHeight = null;
+				$(this).children(".toggle-symbol").text("+")
 			} else {
 				content.style.maxHeight = content.scrollHeight + "px";
+				$(this).children(".toggle-symbol").text("-")
 			}
 		});
 	});
@@ -38,15 +40,14 @@ $(document).ready(function() {
 				json: JSON.stringify(test)
 			},
 			success: function(response) {
-				alert(response);
 
-				// let json = JSON.parse(response);
+				let json = JSON.parse(response);
 
-				// if(json.result == 0) {
-				// 	alert("success");
-				// } else {
-				// 	alert("failure");
-				// }
+				if(json.result == 0) {
+					alert("Answers saved.")
+				} else {
+					alert("An error occured while trying to submit your answers.")
+				}
 
 			}
 		});

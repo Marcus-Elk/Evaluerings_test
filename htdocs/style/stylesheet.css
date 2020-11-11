@@ -89,44 +89,56 @@ p.text2 {
 }
 
 .select {
-    display: inline-flex;
-    flex-direction: column;
-    background: rgb(29, 53, 45);
-    list-style: none;
-    padding: 0.6rem;
+    background-color: #254b62;
+    display: inline-block;
     margin: 0;
+    padding: 0.2em 0.4em 0.2em 0.8em;
+    border-radius: 2em;
 }
 
-.select span img {
+.select span {
+    vertical-align: middle;
+}
+
+.select img {
+    vertical-align: middle;
     width: 1em;
     height: 1em;
     margin: 0;
-    margin-left: 1em;
-    display: inline;
-    transition: all 200ms ease-in-out;
+    margin-left: 0.8em;
+    transition: transform 400ms ease-in-out;
+    user-select: none;
 }
 
-.rotated {
-    transform: rotate(180deg);
+.flipped {
+    transform: rotate(-180deg);
 }
 
-.select li {
-    background: rgb(38, 70, 60);
-    display: none;
-    padding: 0.6rem;
-}
-
-.select li:nth-child(odd) {
-    background: rgb(29, 53, 45);
-}
-
-.select .visible {
-    display: inherit;
-    z-index: 2;
+.options {
+    list-style: none;
+    user-select: none;
+    margin: 0;
+    padding: 0;
     position: absolute;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 400ms;
 }
 
-  
+.options li {
+    background: rgb(33, 58, 90); /* TODO color for this */
+    padding: 0.2em;
+}
+
+.options li:nth-child(odd) {
+    background: rgb(49, 86, 134); /* TODO and this */
+}
+
+.options li:hover {
+    padding: calc(0.2em - 1px);
+    border: 1px solid white;
+}
+
 .select-items div:hover, .same-as-selected {
     background-color: rgba(0, 0, 0, 0.1);
 }
