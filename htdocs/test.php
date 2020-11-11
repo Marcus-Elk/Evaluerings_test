@@ -50,7 +50,7 @@
 	
 	<div id="questions">
 		<?php
-			$query		= "SELECT `id`, `title`, `text` FROM `questions` WHERE `test_id`=$t_id";
+			$query		= "SELECT `id`, `title`, `text` FROM `questions` WHERE `test_id`=$t_id ORDER BY `index`";
 			$q_result	= mysqli_query($db, $query) or die(mysqli_error($db));
 
 			while($q_row = mysqli_fetch_assoc($q_result)) {
@@ -70,16 +70,16 @@
 				<ul class="answers">
 
 					<?php
-						$query		= "SELECT `id`, `text` FROM `answer_options` WHERE `question_id`=$q_id;";
+						$query		= "SELECT `text`, `index` FROM `answers` WHERE `question_id`=$q_id ORDER BY `index`;";
 						$a_result	= mysqli_query($db, $query) or die(mysqli_error($db));
 
 						while($a_row = mysqli_fetch_assoc($a_result)) {
-							$a_id	= $a_row['id'];
-							$a_text	= $a_row['text'];
+							$a_index	= $a_row['index'];
+							$a_text		= $a_row['text'];
 					?>
 					<li class="answer">
-						<input type="radio" id="a<?=$a_id?>" name="<?=$q_id?>" value="<?=$a_id?>"></input>
-						<label class="answer-text" for="a<?=$a_id?>"><?=$a_text?></label>
+						<input type="radio" id="q<?=$q_id."a".$a_index?>" name="<?=$q_id?>" value="<?=$a_index?>"></input>
+						<label class="answer-text" for="q<?=$q_id."a".$a_index?>"><?=$a_text?></label>
 					</li>
 					<?php
 						}

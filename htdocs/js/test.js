@@ -25,23 +25,29 @@ $(document).ready(function() {
 		
 		let test = {
 			id: url.searchParams.get("t"),
-			answers: []
+			results: []
 		}
 
-		$(".question").each(function(index) {
+		$(".question").each(function() {
 			let q_id = parseInt(this.id.substring(1));
-			let a_id = parseInt($("input[name="+q_id+"]:checked").val());
-			test.answers.push(a_id);
+
+			let result = {
+				q_id: q_id,
+				a_index: parseInt($("input[name="+q_id+"]:checked").val())
+			}
+
+			test.results.push(result);
 		});
 
+		console.log(test);
+
 		$.ajax({
-			url:'./test/push_answer.php',
+			url:'./test/push_result.php',
 			method: 'POST',
 			data: {
 				json: JSON.stringify(test)
 			},
 			success: function(response) {
-
 				let json = JSON.parse(response);
 
 				switch(json.result) {
@@ -54,12 +60,6 @@ $(document).ready(function() {
 					case 1:
 						alert("You have already answered this test");
 					break;
-				}
-
-				if(json.result == 0) {
-					
-				} else {
-					
 				}
 
 			}
