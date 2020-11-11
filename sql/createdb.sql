@@ -22,7 +22,8 @@ CREATE TABLE `tests`(
 	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `title` VARCHAR(255) NOT NULL,
 	`team_id` INT,
-    FOREIGN KEY (`team_id`) REFERENCES `teams`(`id`)    
+    `team_name` VARCHAR(255),
+    FOREIGN KEY (`team_id`) REFERENCES `teams`(`id`)
 );
 
 CREATE TABLE `questions` (
