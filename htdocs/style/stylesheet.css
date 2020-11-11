@@ -235,3 +235,10 @@ p.text2 {
 letter-spacing: 0.05em;
 }
   
+.correct {
+    color: lightgreen;
+}
+
+.wrong {
+    color: lightcoral;
+}

@@ -13,25 +13,24 @@ $(document).ready(function() {
             questions: []
         };
 
-        // add quesions to test:
-        $("#test .question").each(function(q_index, q_element){
+        // add questions to test:
+        $("#test .question").each(function(){
             let question = {
-                title: $(q_element).find(".title-field").val().trim(),
-                text: $(q_element).find(".text-field").val().trim(),
+                title: $(this).find(".title-field").val().trim(),
+                text: $(this).find(".text-field").val().trim(),
+                correct_index: 0,
                 answers: [],
             }
 
             // add answers to question:
-            $(q_element).find(".answer").each(function(a_index, a_element){
+            $(this).find(".answer").each(function(answer_index){
 
-                let isChecked = 0;
-                if($(a_element).children("input[type=checkbox]").is(":checked")){
-                    isChecked = 1;
+                if($(this).children("input[type=checkbox]").is(":checked")){
+                    question.correct_index = answer_index;
                 }
 
                 let answer = {
-                    text: $(a_element).find(".text-field").val().trim(),
-                    is_correct: isChecked
+                    text: $(this).find(".text-field").val().trim(),
                 };
 
                 question.answers.push(answer);
@@ -41,13 +40,11 @@ $(document).ready(function() {
 
         });
 
-        let json = JSON.stringify(test);
-        console.log(json);
         $.ajax({
             url: "./test/push_test.php",
             type: "post",
             data: {
-                json: json
+                json: JSON.stringify(test)
             },
             success: function(response){
                 json_ = JSON.parse(response);

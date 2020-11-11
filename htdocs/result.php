@@ -20,30 +20,34 @@
 
     <?php
         if(isTeacher()) {
-            $query = "SELECT `id`, `username` FROM `users` WHERE `team_id`={$_SESSION['team_id']};";
-            $u_result = mysqli_query($db, $query) or die("error");
+            $t_id = $_GET['t'];
 
-            $query = "SELECT `id` FROM `questions` WHERE `test_id`={$_GET['t']};";
-            $q_result = mysqli_query($db, $query) or die("error");
-            $q_count = mysqli_num_rows($q_result);
+            $query = "SELECT `team_id` FROM `tests` WHERE `id`=$t_id;";
+            $result = mysqli_query($db, $query) or die(mysqli_error($db));
 
-            // $r_results = [];
+            $team_id = mysqli_fetch_row($result)[0];
 
-            // while($q_row = mysqli_fetch_assoc($q_result)) {
-            //     $query = "SELECT a.`is_correct` "
-            //     $r_result = mysqli_query($db, $query) or die("error");
-            //     array_push($r_results, $r_result);
-            // }
+            $query = "SELECT `id`, `index`, `correct_answer_index` FROM `questions` WHERE `test_id`=$t_id ORDER BY `index`;";
+            $q_result = mysqli_query($db, $query) or die(mysqli_error($db));
 
+            $q_ids = [];
+            $q_cais = [];
+            
             ?>
             <table>
                 <tr>
                     <th>Username</th>
 
                     <?php
-                        for($i = 1; $i <= $q_count; $i++) {
-                            echo("<th>Q$i</th>");
+                        while($q_row = mysqli_fetch_assoc($q_result)) {
+                            $friendly_idx = $q_row['index'] + 1;
+                            echo("<th>Q$friendly_idx</th>");
+                            array_push($q_ids, intval($q_row['id']));
+                            array_push($q_cais, intval($q_row['correct_answer_index']));
                         }
+
+                        $query = "SELECT `id`, `username` FROM `users` WHERE `team_id`=$team_id;";
+                        $u_result = mysqli_query($db, $query) or die(mysqli_error($db));
                     ?>
 
                     <th>Total</th>
@@ -54,20 +58,29 @@
                         echo("<tr>");
                         echo("<td>{$u_row['username']}</td>");
                         
-                        $query = "SELECT a.`is_correct` FROM `results` AS r
-                            INNER JOIN `answer_options` AS a
-                                ON r.`answer_option_id`=a.`id`
-                            WHERE r.`user_id`={$u_row['id']};";
-                        
-                        $r_result = mysqli_query($db, $query);
+                        $correct = 0;
+                        $total = count($q_ids);
 
-                        for($i = 0; $i < $q_count; $i++) {
-                            $r_row = mysqli_fetch_assoc($r_result) or $r_row = array('is_correct' => "N/A");
-                            echo("<td>{$r_row['is_correct']}</td>");
+                        for($i = 0; $i < $total; $i++) {
+                            $query = "SELECT `answer_index` FROM `results` WHERE `user_id`={$u_row['id']} AND `question_id`={$q_ids[$i]};";
+                            $r_result = mysqli_query($db, $query) or die(mysqli_error($db));
+
+                            if(mysqli_num_rows($r_result) > 0) {
+                                $ai = mysqli_fetch_row($r_result)[0];
+                                
+                                if($ai++ == $q_cais[$i]) {
+                                    echo("<td class=\"correct\">$ai</td>");
+                                    $correct++;
+                                }else {
+                                    echo("<td class=\"wrong\">$ai</td>");
+                                }
+                            }else {
+                                echo("<td class=\"wrong\">N/A</td>");
+                            }
                         }
 
-                        echo("<td></td>");
-                        echo("<td></td>");
+                        echo("<td>$correct/$total</td>");
+                        echo("<td>" . number_format($correct/$total*100, 2) . "%</td>");
                         echo("</tr>");
                     }
                 ?>
@@ -78,27 +91,7 @@
         }
 
         if(isStudent()) {
-            $query = "SELECT r.`user_id`, a.`is_correct`  FROM `results` AS r
-                INNER JOIN `answer_options` AS a
-                    ON r.`answer_option_id`=a.`id`
-                INNER JOIN `questions` AS q
-                    ON a.`question_id`=q.`id`
-                INNER JOIN `tests` AS t
-                    ON q.`test_id`=t.`id`
-                WHERE r.`user_id`={$_SESSION['user_id']} AND t.`id`={$_GET['t']};";
             
-            $result = mysqli_query($db, $query) or die("error");
-
-            $total = mysqli_num_rows($result);
-            $correct = 0;
-
-            while($row = mysqli_fetch_assoc($result)) {
-                if($row['is_correct']) {
-                    $correct++;
-                }
-            }
-
-            echo($correct."/".$total);
         }
 
     ?>
