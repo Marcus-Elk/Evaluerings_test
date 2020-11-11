@@ -20,8 +20,11 @@ $(document).ready(function() {
 
 
 	$(".submit-button").click(function() {
+	
+		let url = new URL(window.location.href);
 		
 		let test = {
+			id: url.searchParams.get("t"),
 			answers: []
 		}
 
@@ -30,8 +33,6 @@ $(document).ready(function() {
 			let a_id = parseInt($("input[name="+q_id+"]:checked").val());
 			test.answers.push(a_id);
 		});
-
-		console.log(test);
 
 		$.ajax({
 			url:'./test/push_answer.php',
@@ -43,10 +44,22 @@ $(document).ready(function() {
 
 				let json = JSON.parse(response);
 
+				switch(json.result) {
+					case 0:
+						window.location.href = "./index.php";
+						break;
+					case -1:
+						alert("An error occured while trying to submit your answers.");
+						break;
+					case 1:
+						alert("You have already answered this test");
+					break;
+				}
+
 				if(json.result == 0) {
-					alert("Answers saved.")
+					
 				} else {
-					alert("An error occured while trying to submit your answers.")
+					
 				}
 
 			}

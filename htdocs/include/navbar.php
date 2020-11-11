@@ -38,7 +38,7 @@
 	<?php endif;?>
 
 		<li class="nav-item">
-			<a class="nav-link" href="#">
+			<a class="nav-link" href="view_result.php">
 				<img class="nav-icon" src="./icon/scores.svg">
 				<span class="nav-text">Results</span>
 			</a>
