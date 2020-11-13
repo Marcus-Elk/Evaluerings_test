@@ -65,18 +65,23 @@
                             $query = "SELECT `answer_index` FROM `results` WHERE `user_id`={$u_row['id']} AND `question_id`={$q_ids[$i]};";
                             $r_result = mysqli_query($db, $query) or die(mysqli_error($db));
 
+                            echo("<td>");
+
                             if(mysqli_num_rows($r_result) > 0) {
                                 $ai = mysqli_fetch_row($r_result)[0];
                                 
+                                
                                 if($ai++ == $q_cais[$i]) {
-                                    echo("<td class=\"correct\">$ai</td>");
+                                    echo("<b class=\"correct\">$ai</b>");
                                     $correct++;
                                 }else {
-                                    echo("<td class=\"wrong\">$ai</td>");
+                                    echo("<b class=\"wrong\">$ai</b>");
                                 }
                             }else {
-                                echo("<td class=\"wrong\">N/A</td>");
+                                echo("<b class=\"wrong\">N/A</b>");
                             }
+
+                            echo("</td>");
                         }
 
                         echo("<td>$correct/$total</td>");

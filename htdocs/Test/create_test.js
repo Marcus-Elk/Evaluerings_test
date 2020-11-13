@@ -18,7 +18,7 @@ $(document).ready(function() {
             let question = {
                 title: $(this).find(".title-field").val().trim(),
                 text: $(this).find(".text-field").val().trim(),
-                correct_index: 0,
+                correct_index: -1,
                 answers: [],
             }
 
