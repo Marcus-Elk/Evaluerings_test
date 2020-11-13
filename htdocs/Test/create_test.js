@@ -5,6 +5,9 @@ $(document).ready(function() {
 	$(".add-question").click(function() {
         $("#question-template .question").clone(true).appendTo("#test");
     });
+    $(".remove-question").click(function() {  //delete Questions
+        $('.remove-question').closest('.container2').find('.question').not(':first').last().remove();
+    });
 
     $(".save").click(function() {
         let test = {

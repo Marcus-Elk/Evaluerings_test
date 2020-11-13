@@ -50,6 +50,7 @@
 
     </div>
     <button type="button" class="add-question">Add questions</button>
+    <button type="button" class="remove-question">Remove question</button>
     <button type="button" class="save">Publish Test</button>
 </main>
     
