@@ -1,5 +1,3 @@
-
-
 <?php
     session_start();
 
@@ -19,7 +17,9 @@
     $query = substr($query, 0, -1);
     $query .= ";";
 
-    mysqli_query($db, $query) or die(json_encode(array('result' => -1)));
+    mysqli_query($db, $query) or die(json_encode(array(
+        'result' => -1
+    )));
     
     die(json_encode(array('result' => 0)));
 ?>

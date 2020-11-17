@@ -17,7 +17,6 @@
 
 <main>
 
-
     <?php
         if(isTeacher()) {
             $t_id = $_GET['t'];
@@ -56,6 +55,7 @@
                 <?php
                     while($u_row = mysqli_fetch_assoc($u_result)) {
                         echo("<tr>");
+                        
                         echo("<td>{$u_row['username']}</td>");
                         
                         $correct = 0;
