@@ -209,7 +209,7 @@ p.text2 {
     text-align: center;
     color: #fffff0;
     background-color: #254b62;
-    transition: all 200ms;
+        transition: all 200ms;
     outline: none;
 }
 
