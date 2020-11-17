@@ -193,6 +193,11 @@ p.text2 {
 .question input[type="text"]{
     width: 200px;
 }
+
+.answer {
+    margin: 1em 0;
+}
+
 .container2 button[type="button"] {
 
     display: inline-block;

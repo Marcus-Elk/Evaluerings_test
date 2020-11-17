@@ -16,6 +16,7 @@
     <title>Create a Test</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+    <script src="./js/load_mathjax.js"></script>
     <script src="./test/create_test.js" defer></script>
     <script src="./style/select_list.js" defer></script>
 
@@ -50,7 +51,6 @@
 
     </div>
     <button type="button" class="add-question">Add questions</button>
-    <button type="button" class="remove-question">Remove question</button>
     <button type="button" class="save">Publish Test</button>
 </main>
     
@@ -61,22 +61,26 @@
                 <input class="title-field" name="title" type="text" placeholder="Give the question a title"></input>
             </div>
             <div class="question-text">
-                <textarea class="text-field" name="question-text" rows="5" cols="100" placeholder="Write the question"></textarea>
+                <textarea class="text-field" name="question-text" rows="5" cols="50" placeholder="Write the question"></textarea>
+                <p class="text-preview"></p>
             </div>
             <div class="answer-options">
 
             </div>
             <div>
                 <button type="button" class="add-answer">Add answer</button>
-            </div>  
+                <button type="button" class="remove-question">Remove question</button>
+            </div>
             <div class="white-line"></div>
         </div>
     </div>
 
     <div class="template" id="answer-template">
         <div class="answer">
-            <textarea class="text-field" name="answer-text" rows="3" cols="30" placeholder="Write the answer"></textarea> <!--css kode: https://www.w3schools.com/howto/howto_css_switch.asp-->
+            <textarea class="text-field" name="answer-text" rows="3" cols="30" placeholder="Write the answer"></textarea> 
+            <p class="text-preview"></p>
             <input type="checkbox">
+            <button type="button" class="remove-answer">Remove answer</button>
         </div>
     </div>
 </body>

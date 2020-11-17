@@ -40,17 +40,7 @@
             echo("<p class = \"text\">You are not logged in</p>");
         }
     ?>
-
-    <div>
-        <textarea class="math-input" rows="5" cols="40" placeholder="Math text here">`[[a, b], [c, d]][[x], [y]]=[[a x + b y], [c x + d y]]`</textarea>
-        <p class="math-output"></p>
-    </div>
-
-    <div>
-        <textarea class="math-input" rows="5" cols="40" placeholder="Math text here">`[[a, b], [c, d]][[x], [y]]=[[a x + b y], [c x + d y]]`</textarea>
-        <p class="math-output"></p>
-    </div>
-
+    
 </main>
 </body>
 </html>

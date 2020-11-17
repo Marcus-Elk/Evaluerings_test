@@ -6,8 +6,19 @@ $(document).ready(function() {
         $("#question-template .question").clone(true).appendTo("#test");
     });
     $(".remove-question").click(function() {  //delete Questions
-        $('.remove-question').closest('.container2').find('.question').not(':first').last().remove();
+        $(this).parent().parent().remove();
     });
+    $(".remove-answer").click(function() {  //delete Questions
+        $(this).parent().remove();
+    });
+
+    $(".text-field").bind("input propertychange", function() {
+        let out = $(this).next(".text-preview");
+        
+        out.text($(this).val().replace(/(?:\r\n|\r|\n)/g, '<br>'));
+        MathJax.typeset(out);
+    });
+
 
     $(".save").click(function() {
         let test = {
