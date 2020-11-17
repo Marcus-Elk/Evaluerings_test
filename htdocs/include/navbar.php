@@ -1,4 +1,3 @@
-
 <?php require_once("./include/roles.php") ?>
 
 <nav class="navbar">

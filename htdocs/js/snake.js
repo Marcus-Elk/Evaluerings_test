@@ -1,4 +1,5 @@
 
+
 const canvas = document.getElementById("game-canvas");
 const context = canvas.getContext("2d");
 
@@ -147,7 +148,8 @@ function draw() {
 	context.font = `bold ${unitSize}px monospace`;
 	context.fillStyle = "rgb(230, 230, 230)";
 	context.fillText(`Score: ${score}`, unitSize * 0.5, unitSize * 1);
-	}
+}
+
 var isStarted = false;	
 $(document).keyup(function(event) {
 	if (event.which === 27) {
