@@ -29,7 +29,7 @@
 
             while($row = mysqli_fetch_assoc($result)) {
                 ?>
-                    <li><a href="./result.php?t=<?= $row['id']?>"><?= $row['title']?></a></li>
+                    <li><a class="test-options" href="./result.php?t=<?= $row['id']?>"><?= $row['title']?></a></li>
                 <?php
             }
         }
