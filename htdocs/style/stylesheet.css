@@ -6,6 +6,7 @@
     --three: #fffff0;
     --four:   #254b62;
     --five:  #77abb7;
+    --six:  #77abb7;
 }
 
 body {
@@ -214,12 +215,12 @@ p.text2 {
     text-align: center;
     color: var(--three);
     background-color: var(--four);
-        transition: all 200ms;
+    transition: all 200ms;
     outline: none;
 }
 
 .container2 button[type="button"]:hover {
-background-color:var(--five);
+    background-color: var(--five);
 }
 
 .text-field, .title, .title-field{
