@@ -1,13 +1,18 @@
 :root {
   font-size: 16px;
   font-family: 'Roboto', sans-serif;  
+    --one:  #476D7C; 
+    --two: #1D3E53;
+    --three: #fffff0;
+    --four:   #254b62;
+    --five:  #77abb7;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background: #476D7C;
-    color:  #fffff0;
+    background:var(--one);
+    color:  var(--three);
 }
 
 .container {
@@ -20,33 +25,33 @@ body {
     transform: translate(-50%, -50%);
     border-radius: 5%;
     text-align: center;
-    background: #1D3E53;
+    background: var(--two);
 }
 
 .container input[type="text"],
 .container input[type="Password"] {
-    color: #fffff0;
+    color: var(--three);
     position: relative;
     top: 20%;  
     text-align: center;
     width: 100%;   
    
-    background: #254b62;
+    background: var(--four);
     margin: 1px auto;
     border: none;
-    /*border-bottom: 1px solid  #77ABB7;*/
+    /*border-bottom: 1px solid var(--five);*/
     
     padding: 14px 0;
     outline: none;
 }
 
 .container b{
-color: #fffff0;
+color: var(--three);
 
 }
 
 .container h1 {
-    color: white;
+    color: var(--three);
     text-transform: uppercase;
     text-align: center;
 }
@@ -66,21 +71,21 @@ color: #fffff0;
   border-radius: 2em;
   text-decoration: none;
   text-align: center;
-  color: #fffff0;
-  background-color: #254b62;
+  color: var(--three);
+  background-color: var(--four);
   transition: all 200ms;
   outline: none;
 }
 #submit:hover {
-  background-color: #476d7c;
+  background-color:var(--one);
 }
 
 p.text {
-color: white;
+color:  var(--three);
     
 }
 p.text2 {
-    color: lightgrey;  
+    color:  var(--three);  
 }
 
 
@@ -89,7 +94,7 @@ p.text2 {
 }
 
 .select {
-    background-color: #254b62;
+    background-color: var(--four);
     display: inline-block;
     margin: 0;
     padding: 0.2em 0.4em 0.2em 0.8em;
@@ -126,17 +131,17 @@ p.text2 {
 }
 
 .options li {
-    background: rgb(33, 58, 90); /* TODO color for this */
+    background: var(--two) ;
     padding: 0.2em;
 }
 
 .options li:nth-child(odd) {
-    background: rgb(49, 86, 134); /* TODO and this */
+    background: var(--one); /* TODO and this */
 }
 
 .options li:hover {
     padding: calc(0.2em - 1px);
-    border: 1px solid white;
+    border: 1px solid var(--three);
 }
 
 .select-items div:hover, .same-as-selected {
@@ -149,7 +154,7 @@ p.text2 {
     margin-left: 14%;
     margin-right: 5%;
     padding-top: 1%;
-    color: white;
+    color:  var(--three);
 }
 
 .question {
@@ -172,8 +177,8 @@ p.text2 {
 }
 
 .container2 .title{
-    color: #1D3E53;
-    background: #fffff0;
+    color: var(--two);
+    background: var(--three);
     width: 200px;
     border: 0;
     border-radius: 2em;
@@ -182,8 +187,8 @@ p.text2 {
 }
 
 .question input[type="text"], .container2 textarea {
-    color: #1d3e53;
-    background: #fffff0;
+    color: var(--two);
+    background: var(--three);
     border: 0;
     border-radius: 1em;
     padding: 5px 10px;
@@ -207,14 +212,14 @@ p.text2 {
     border-radius: 2em;
     text-decoration: none;
     text-align: center;
-    color: #fffff0;
-    background-color: #254b62;
+    color: var(--three);
+    background-color: var(--four);
         transition: all 200ms;
     outline: none;
 }
 
 .container2 button[type="button"]:hover {
-background-color: #77abb7;
+background-color:var(--five);
 }
 
 .text-field, .title, .title-field{
@@ -224,7 +229,7 @@ background-color: #77abb7;
 .white-line {
     width: 100%;
     height: 1px;
-    background-color: white;
+    background-color:  var(--three);
     margin-top: 5px;
     margin-bottom: 5px;
     padding: 1px;
@@ -250,14 +255,14 @@ letter-spacing: 0.05em;
 
 .test-options{
     display: inline-block;
-    padding: 0.2em 0.1em;
+    padding: 1rem;
     border: none;
     font-weight: bold;
     /*border: 0.1em solid white;*/
     font-size: larger;
     text-decoration: none;
     text-align: center;
-    color: #fffff0;
+    color: var(--three);
     
     transition: all 200ms;
     outline: none;
@@ -265,6 +270,7 @@ letter-spacing: 0.05em;
 }
 
 .test-options:hover{
-    color: red;
+    background-color: var(--five);
+    border-radius:100vh;
 
 }

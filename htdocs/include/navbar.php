@@ -45,8 +45,14 @@
 		</li>
 
 <?php endif;?>
+
 		<li class="nav-item">
 			<ul class="nav-list">
+				<li class="nav-item">
+					<a class="nav-link" id="theme-mode" href="#">
+						<img class="nav-icon" src="./icon/login.svg">
+					</a>
+				</li>
 
 <?php if(isset($_SESSION['user_id'])): ?>
 				<li class="nav-item">

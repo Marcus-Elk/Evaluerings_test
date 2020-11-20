@@ -17,6 +17,9 @@
     <?php include("./include/navbar.php") ?>
 
 <main>
+
+    <h1 type="text">View Results</h1>
+    <div class="white-line"></div>
     <ul class="test-list">
     <?php
         if(!isset($_SESSION['user_id'])) {

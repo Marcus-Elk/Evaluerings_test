@@ -8,4 +8,18 @@ $(document).ready(function() {
 		}
 	}); 
 
+
+
+	$("#theme-mode").click(function(){
+		 $(":root")
+			 .css("--one","#313131")
+			 .css("--two","#525252")
+			 .css("--three","#fffff0")
+			 .css("--four","#414141")
+			 .css("--five","CA3E47")
+			 
+			 ;
+
+	});
+
 });
