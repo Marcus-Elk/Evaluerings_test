@@ -1,4 +1,8 @@
+:root {
 
+	--filter-hover: grayscale(0%) brightness(1);
+
+}
 main {
 	margin-left: 5rem;
 	padding: 1rem;
@@ -8,7 +12,7 @@ main {
 	width: 5rem;
 	height: 100vh;
 	position: fixed;
-	background-color: #1D3E53;
+	background-color: var(--two);
 	z-index: 1; /* mathjax equations display above it unless this is used */
 	transition: width 200ms ease;
 }
@@ -35,7 +39,7 @@ main {
 	display: flex;
 	align-items: center;
 	height: 5rem;
-	color:  #77ABB7;
+	color:  var(--six);
 	text-decoration: none;
 	white-space: nowrap;
 	transition: 200ms;
@@ -49,7 +53,7 @@ main {
 }
 
 .nav-link:hover .nav-icon {
-	filter: none;
+	filter: var(--filter-hover);
 }
 
 .nav-text {
@@ -66,20 +70,20 @@ main {
 }
 
 .nav-link:hover {
-	background-color: #254B62;
-	color: white;
+	background-color:var(--four);
+	color: var(--three);
 }
 
 .nav-link.current {
-	background-color: #476D7C;
+	background-color: var(--one);
 }
 
 #logo-link {
-	background-color: #193647;
+	background-color: var(--four);
 }
 
 #logo-link:hover {
-	background-color: #254B62;
+	background-color:var(--four);
 }
 
 #logo-text {
@@ -89,7 +93,7 @@ main {
 	position: absolute;
 	left: -200px;
 	transition: left 400ms;
-	color: white;
+	color: var(--three);
 }
 
 .navbar:hover #logo-text {

@@ -77,7 +77,7 @@
 
     <div class="template" id="answer-template">
         <div class="answer">
-            <textarea class="text-field" name="answer-text" rows="3" cols="30" placeholder="Write the answer"></textarea> 
+            <textarea class="text-field" name="answer-text" rows="3" cols="30" placeholder="Write the answer"></textarea>   
             <p class="text-preview"></p>
             <input type="checkbox">
             <button type="button" class="remove-answer">Remove answer</button>

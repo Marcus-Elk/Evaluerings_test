@@ -25,15 +25,15 @@ button {
 	border: none;
 	outline: none;
 	text-align: left;
-	background-color: #1d3e53;
-	color: #fffff0;
+	background-color: var(--two);
+	color: var(--three);
 }
 
 .question-content {
 	overflow: hidden;
 	max-height: 0px;
 	margin: 0;
-	background: #254b62;
+	background: var(--four);
 	transition: max-height 200ms ease-in-out;
 }
 
@@ -63,24 +63,23 @@ button {
 }
 
 .answer input:checked + label {
-	background: #476D7C;
+	background: var(--one);
 }
 
 .submit-button {
 	display: inline-block;
 	padding: 0.5em 2em;
-	border: 0.1em solid white;
+	border: 0.1em;
 	border-radius: 2em;
 	text-decoration: none;
 	text-align: center;
-	color: white;
-	background-color: transparent;
+	color: var(--three);
+	background-color: var(--four);
 	transition: all 200ms;
 	outline: none;
 }
 
 .submit-button:hover {
-	background-color: white;
-	color: black;
+	background-color:var(--five);
 }
 
