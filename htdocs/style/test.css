@@ -33,7 +33,7 @@ button {
 	overflow: hidden;
 	max-height: 0px;
 	margin: 0;
-	background: var(--four);
+	background: var(--seven);
 	transition: max-height 200ms ease-in-out;
 }
 
@@ -63,7 +63,7 @@ button {
 }
 
 .answer input:checked + label {
-	background: var(--one);
+	background: var(--eight);
 }
 
 .submit-button {

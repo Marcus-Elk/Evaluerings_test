@@ -8,6 +8,7 @@
     --five:  #77abb7;
     --six:  #77abb7;
     --seven:   #254b62;
+    --eight:   #476D7C;
 }
 
 body {
@@ -214,7 +215,7 @@ p.text2 {
     text-decoration: none;
     text-align: center;
     color: var(--three);
-    background-color: var(--four);
+    background-color: var(--seven);
     transition: all 200ms;
     outline: none;
 }
@@ -284,6 +285,5 @@ letter-spacing: 0.05em;
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: white;
     color: red;
 }

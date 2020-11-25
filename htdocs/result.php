@@ -34,7 +34,7 @@
             $q_cais = [];
             
             ?>
-            <table id ="tabsle">
+            <table id ="table">
                 <tr>
                     <th>Username</th>
 
