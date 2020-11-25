@@ -40,6 +40,7 @@ $("#theme-mode").click(function(){
 		 .css("--four","#CA3E47")
 		 .css("--five","#414141")
 		 .css("--six","#fffff0")
+		 .css("--seven","#414141")
 		 .css("--filter-hover","grayscale(100%) brightness(1.4)");
 	} else {
 		$(":root").removeAttr("style");

@@ -7,6 +7,7 @@
     --four:   #254b62;
     --five:  #77abb7;
     --six:  #77abb7;
+    --seven:   #254b62;
 }
 
 body {
@@ -36,8 +37,7 @@ body {
     top: 20%;  
     text-align: center;
     width: 100%;   
-   
-    background: var(--four);
+    background: var(--seven);
     margin: 1px auto;
     border: none;
     /*border-bottom: 1px solid var(--five);*/
@@ -218,6 +218,9 @@ p.text2 {
     transition: all 200ms;
     outline: none;
 }
+a.help:link, a:visited, a:active{
+    color: var(--three);
+}
 
 .container2 button[type="button"]:hover {
     background-color: var(--five);
@@ -274,4 +277,13 @@ letter-spacing: 0.05em;
     background-color: var(--five);
     border-radius:100vh;
 
+}
+
+#table{
+    font-size: large;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: white;
+    color: red;
 }

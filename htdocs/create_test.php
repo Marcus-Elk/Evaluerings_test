@@ -79,6 +79,7 @@
         <div class="answer">
             <textarea class="text-field" name="answer-text" rows="3" cols="30" placeholder="Write the answer"></textarea>   
             <p class="text-preview"></p>
+            <a class="help" href="http://asciimath.org/#syntax" target="_blank">Need Help with writing math?</a>   <BR><BR>
             <input type="checkbox">
             <button type="button" class="remove-answer">Remove answer</button>
         </div>
