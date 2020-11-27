@@ -21,6 +21,9 @@
 
 
     <?php
+        if(!isset($_SESSION['user_id'])) {
+            die('<a href="./login.php">Log in</a> to see your test results.');
+        }
 
         function resultRow($u_id, $u_username) {
             global $db;

@@ -25,6 +25,10 @@
 <main>
 	<?php
 	
+		if(!isset($_SESSION['user_id'])) {
+			die('<a href="./login.php">Log in</a> to see see the test.');
+		}
+
 		if(!isset($_GET['t'])) {
 			header("Location: ./view_test.php");
 			die();

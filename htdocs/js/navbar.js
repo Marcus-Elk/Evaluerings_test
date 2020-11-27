@@ -40,6 +40,8 @@ $("#theme-mode").click(function(){
 		 .css("--four","#CA3E47")
 		 .css("--five","#414141")
 		 .css("--six","#fffff0")
+		 .css("--seven","#414141")
+		 .css("--eight","#CA3E47")
 		 .css("--filter-hover","grayscale(100%) brightness(1.4)");
 
 		$("#dark-theme-icon").css("display", "none");
