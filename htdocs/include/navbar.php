@@ -1,5 +1,6 @@
 <?php require_once("./include/roles.php"); ?>
 <script> var theme = <?= isset($_SESSION['theme']) ? "true" : "false"; ?>; </script>
+
 <nav class="navbar">
 	<link rel="stylesheet" href="./style/navbar.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
