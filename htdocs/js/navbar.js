@@ -33,7 +33,7 @@ $("#theme-mode").click(function(){
 	});
 
 	if(theme){
-	 $(":root")
+	$(":root")
 		 .css("--one","#313131")
 		 .css("--two","#525252")
 		 .css("--three","#fffff0")
@@ -41,8 +41,15 @@ $("#theme-mode").click(function(){
 		 .css("--five","#414141")
 		 .css("--six","#fffff0")
 		 .css("--filter-hover","grayscale(100%) brightness(1.4)");
+
+		$("#dark-theme-icon").css("display", "none");
+		$("#light-theme-icon")
+			.css("display", "block");
 	} else {
 		$(":root").removeAttr("style");
+
+		$("#dark-theme-icon").css("display", "block");
+		$("#light-theme-icon").css("display", "none");
 
 	}
 })
