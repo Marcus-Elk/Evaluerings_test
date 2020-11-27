@@ -285,5 +285,12 @@ letter-spacing: 0.05em;
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    color: red;
+    color: white;
+}
+
+p.text{
+    font-size: large;
+    padding-top: 12px;
+    text-align: left;
+    color: white;
 }

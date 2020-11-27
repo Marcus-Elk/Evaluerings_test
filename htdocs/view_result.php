@@ -19,15 +19,14 @@
 
     <h1 type="text">View Results</h1>
     <div class="white-line"></div>
-
+    <ul class="test-list">
     <?php
-        function testList($team_id, $title) {
-            global $db;
-            
-            echo("<h3>$title</h3>");
-            echo("<ul class=\"test-list\">");
+        if(!isset($_SESSION['user_id'])) {
+            die('<a href="./login.php">Log in</a> to see your results.');
+        }
 
-            $query = "SELECT `id`, `title` FROM `tests` WHERE `team_id`=$team_id;";
+        if(isStudent()) {
+            $query = "SELECT `id`, `title` FROM `tests` WHERE `team_id`={$_SESSION['team_id']} LIMIT 50;";
             $result = mysqli_query($db, $query) or die("error");
 
             while($row = mysqli_fetch_assoc($result)) {
@@ -35,32 +34,10 @@
                     <li><a class="test-options" href="./result.php?t=<?= $row['id']?>"><?= $row['title']?></a></li>
                 <?php
             }
-
-            echo("</ul>");
-
-        }
-
-        if(!isset($_SESSION['user_id'])) {
-            die('<a href="./login.php">Log in</a> to see your results.');
-        }
-
-        if(isTeacher()) {
-            $query = "SELECT `id`, `name` FROM `teams`;";
-            $result = mysqli_query($db, $query) or die("error");
-
-            while ($team = mysqli_fetch_assoc($result)) {
-                testList($team['id'], $team['name']);
-            }
-
-        }
-    ?>
-
-    <?php
-        if(isStudent()) {
-            testList($_SESSION['team_id'], "Your tests");
         }
     
     ?>
+    </ul>
 
 </main>
 </body>

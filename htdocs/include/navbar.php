@@ -49,9 +49,9 @@
 			<ul class="nav-list">
 				<li class="nav-item">
 					<a class="nav-link" id="theme-mode" href="#">
-						<img class="nav-icon" id="dark-theme-icon" src="./icon/dark_theme.svg">
-						<img class="nav-icon" id="light-theme-icon" src="./icon/light_theme2.svg">
+						<img class="nav-icon" src="./icon/login.svg">
 						<span class="nav-text">Change theme</span>
+					
 					</a>
 				</li>
 

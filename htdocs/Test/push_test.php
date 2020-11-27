@@ -6,6 +6,12 @@
 
     $test = json_decode($_POST['json'], TRUE);
 
+    if(!isset($_SESSION['user_id'])) {
+        die(json_encode(array(
+            'result' => -1
+        )));
+    }
+
     if(!isTeacher()) {
         die(json_encode(array(
             'result' => -1,

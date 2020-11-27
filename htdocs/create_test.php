@@ -4,6 +4,8 @@
     require_once("./include/db_connect.php");
     require_once("./include/roles.php");
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -23,8 +25,16 @@
 </head>
 <body>
 <?php include("./include/navbar.php"); ?>
+
     
 <main class="container2">
+<?php
+
+if(!isset($_SESSION['user_id'])) {
+    die('<a href="./login.php">Log in</a> to create a test.');
+}
+?>
+
     <h1 type="text">Create a test</h1>
     <div class="container2_top">
         <input class="title" type="text" id="test_title" name="title" placeholder="Title"> </input>

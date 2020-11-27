@@ -21,24 +21,26 @@
         require_once("./include/roles.php");
 
         if(isset($_SESSION['user_id'])) {
-            echo("<p class = \"text\">Username: {$_SESSION['username']}<br></p>");
+            echo("<p class=\"text\">Username: {$_SESSION['username']}<br></p>");
             
             if(isAdmin()) {
-                echo("<p class = \"text\">This is an admin account</p>");
+                echo("<p class=\"text\">This is an admin account</p>");
             }
 
             if(isTeacher()){
-                echo("<p class = \"text\">You are logged in as a teacher</p>");
+                echo("<p class=\"text\">You are logged in as a teacher</p>");
             }
 
             if(isStudent()){
-                echo("<p class = \"text\">You are logged in as a student</p>");
+                echo("<p class=\"text\">You are logged in as a student</p>");
+                echo("<p class=\"text\">You are in team</p>");
             }
+                
             ?>
 
         <?php
         } else {
-            echo("<p class = \"text\">You are not logged in</p>");
+            echo("<p class=\"text\">You are not logged in</p>");
         }
     ?>
 
