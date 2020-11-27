@@ -16,7 +16,7 @@
 		$username		= generateUsername($firstName);
 
 		$query = "INSERT INTO `users`(`first_name`, `last_name`, `username`, `password_hash`, `roles`, `team_id`)
-			VALUES('$firstName', '$lastName', '$username', '$passwordHash', 0, $team);";
+			VALUES('$firstName', '$lastName', '$username', '$passwordHash', 1, $team);";
 
 		$result = mysqli_query($db, $query);
 		if(!$result) {

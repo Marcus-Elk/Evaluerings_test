@@ -33,7 +33,7 @@ CREATE TABLE `questions` (
     `index` INT NOT NULL,
     `correct_answer_index` INT NOT NULL,
     FOREIGN KEY (`test_id`) REFERENCES `tests`(`id`),
-    UNIQUE INDEX `unqidx` (`test_id`, `index`)
+    UNIQUE INDEX `unqidx` (`test_id`, `index`) # enforce only one question with a given index can be in a test
 );
 
 CREATE TABLE `answers`(
@@ -42,7 +42,7 @@ CREATE TABLE `answers`(
     `question_id` INT NOT NULL,
     `index` INT NOT NULL,
 	FOREIGN KEY (`question_id`) REFERENCES `questions`(`id`),
-	UNIQUE INDEX `unqidx` (`question_id`, `index`)
+	UNIQUE INDEX `unqidx` (`question_id`, `index`) # enforce only one answer per index per question 
 );
 
 CREATE TABLE `results`(
