@@ -1,44 +1,64 @@
 $(document).ready(function() {
-    $("#add_answer").click(function() {
-        $("#answer_template .answer").clone(true).appendTo($(this).parent().children("#answer_options"));
+    $(".add-answer").click(function() {
+        $("#answer-template .answer").clone(true).appendTo($(this).parent().parent().children(".answer-options"));
     });
-	$("#add_question").click(function() {
-        $("#question_template .question").clone(true).appendTo("#test");
+	$(".add-question").click(function() {
+        $("#question-template .question").clone(true).appendTo("#test");
+    });
+    $(".remove-question").click(function() {  //delete Questions
+        $(this).parent().parent().remove();
+    });
+    $(".remove-answer").click(function() {  //delete Questions
+        $(this).parent().remove();
     });
 
-    $("#save_test").click(function() {
+    $(".text-field").bind("input propertychange", function() {
+        let out = $(this).next(".text-preview");
+        
+        out.text($(this).val().replace(/(?:\r\n|\r|\n)/g, '<br>'));
+        MathJax.typeset(out);
+    });
+
+
+    $(".save").click(function() {
         let test = {
             title: $("#test_title").val().trim(),
             team_id: parseInt($("#team_select").val().trim()),
             questions: []
         };
-        $("#test .question").each(function(q_index, q_element){
-            let answers = [];
-            $(q_element).find("#answer_options .answer").each(function(a_index, a_element){
-                
-                let isChecked = 0;
-                if($(a_element).children("#is_correct").is(":checked")){
-                    isChecked = 1;
+
+        // add questions to test:
+        $("#test .question").each(function(){
+            let question = {
+                title: $(this).find(".title-field").val().trim(),
+                text: $(this).find(".text-field").val().trim(),
+                correct_index: -1,
+                answers: [],
+            }
+
+            // add answers to question:
+            $(this).find(".answer").each(function(answer_index){
+
+                if($(this).children("input[type=checkbox]").is(":checked")){
+                    question.correct_index = answer_index;
                 }
-                answers.push({
-                    text: $(a_element).children("#answer_text").val().trim(),
-                    is_correct: isChecked
-                });
+
+                let answer = {
+                    text: $(this).find(".text-field").val().trim(),
+                };
+
+                question.answers.push(answer);
             });
-            test.questions.push({
-                title: $(q_element).children("#question_title").val().trim(),
-                text: $(q_element).children("#question_text").val().trim(),
-                answers: answers,
-            });
+
+            test.questions.push(question);
 
         });
 
-        let json = JSON.stringify(test);
         $.ajax({
-            url: "push_test.php",
+            url: "./test/push_test.php",
             type: "post",
             data: {
-                json: json
+                json: JSON.stringify(test)
             },
             success: function(response){
                 json_ = JSON.parse(response);

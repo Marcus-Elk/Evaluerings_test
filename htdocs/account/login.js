@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
 
 	$("#submit").click(function() {
@@ -9,7 +8,7 @@ $(document).ready(function() {
 		if(username !== "" && password !== "") {
 			
 			$.ajax({
-				url:  'authenticate.php',
+				url:  './account/authenticate.php',
 				type: 'post',
 				data: {
 					username:	username,
@@ -20,7 +19,7 @@ $(document).ready(function() {
 
 					switch(json.result) {
 						case 0:
-							window.location = "../index.php";
+							window.location = "./index.php";
 							break;
 						case 1:
 							$("#msg").html("Invalid username or password");

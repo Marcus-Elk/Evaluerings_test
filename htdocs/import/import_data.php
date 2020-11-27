@@ -1,9 +1,8 @@
-
 <?php
     session_start();
 
-    require_once("./include/db_connect.php");
-    require_once("./include/roles.php");
+    require_once("../include/db_connect.php");
+    require_once("../include/roles.php");
 
 
     if(isset($_SESSION['user_id'])) {
@@ -14,7 +13,7 @@
         global $db;
         $result = mysqli_query($db, "SELECT * FROM `users` WHERE `users`.`username` = '{$username}'");
         if(!$result) {
-            echo(mysqli_error($conn)."<br>");
+            echo(mysqli_error($db)."<br>");
         } else {
             return mysqli_num_rows($result) != 0;
         }
@@ -35,7 +34,7 @@
 
     function import() {
         global $db;
-        $file = fopen("./include/data.csv", "r");    
+        $file = fopen("../include/data.csv", "r");    
 
         while(!feof($file)) {
             $line = fgets($file);

@@ -1,0 +1,296 @@
+:root {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;  
+    --one:  #476D7C; 
+    --two: #1D3E53;
+    --three: #fffff0;
+    --four:   #254b62;
+    --five:  #77abb7;
+    --six:  #77abb7;
+    --seven:   #254b62;
+    --eight:   #476D7C;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background:var(--one);
+    color:  var(--three);
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 25%;
+    padding-top: 2%;
+    padding-bottom: 5% ;
+    transform: translate(-50%, -50%);
+    border-radius: 5%;
+    text-align: center;
+    background: var(--two);
+}
+
+.container input[type="text"],
+.container input[type="Password"] {
+    color: var(--three);
+    position: relative;
+    top: 20%;  
+    text-align: center;
+    width: 100%;   
+    background: var(--seven);
+    margin: 1px auto;
+    border: none;
+    /*border-bottom: 1px solid var(--five);*/
+    
+    padding: 14px 0;
+    outline: none;
+}
+
+.container b{
+color: var(--three);
+
+}
+
+.container h1 {
+    color: var(--three);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.container input[type="button"] {
+    position: relative;
+    top: 100;
+    text-align: center;
+}
+
+
+#submit {
+  display: inline-block;
+  padding: 0.5em 2em;
+  border: 0;
+  /*border: 0.1em solid white;*/
+  border-radius: 2em;
+  text-decoration: none;
+  text-align: center;
+  color: var(--three);
+  background-color: var(--four);
+  transition: all 200ms;
+  outline: none;
+}
+#submit:hover {
+  background-color:var(--one);
+}
+
+p.text {
+color:  var(--three);
+    
+}
+p.text2 {
+    color:  var(--three);  
+}
+
+
+.custom-select {
+    display: none;
+}
+
+.select {
+    background-color: var(--four);
+    display: inline-block;
+    margin: 0;
+    padding: 0.2em 0.4em 0.2em 0.8em;
+    border-radius: 2em;
+}
+
+.select span {
+    vertical-align: middle;
+}
+
+.select img {
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+    margin: 0;
+    margin-left: 0.8em;
+    transition: transform 400ms ease-in-out;
+    user-select: none;
+}
+
+.flipped {
+    transform: rotate(-180deg);
+}
+
+.options {
+    list-style: none;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 400ms;
+}
+
+.options li {
+    background: var(--two) ;
+    padding: 0.2em;
+}
+
+.options li:nth-child(odd) {
+    background: var(--one); /* TODO and this */
+}
+
+.options li:hover {
+    padding: calc(0.2em - 1px);
+    border: 1px solid var(--three);
+}
+
+.select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Create test*/
+
+.container2 {
+    margin-left: 14%;
+    margin-right: 5%;
+    padding-top: 1%;
+    color:  var(--three);
+}
+
+.question {
+    display: flex;
+    flex-direction: column;
+}
+
+.question-title {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.question .white-line {
+    width: 70%;
+}
+
+.container2_top {
+    display:flex; 
+    justify-content: space-between;
+}
+
+.container2 .title{
+    color: var(--two);
+    background: var(--three);
+    width: 200px;
+    border: 0;
+    border-radius: 2em;
+    padding: 7px 10px;
+    outline: none;
+}
+
+.question input[type="text"], .container2 textarea {
+    color: var(--two);
+    background: var(--three);
+    border: 0;
+    border-radius: 1em;
+    padding: 5px 10px;
+    outline: none;
+}
+
+.question input[type="text"]{
+    width: 200px;
+}
+
+.answer {
+    margin: 1em 0;
+}
+
+.container2 button[type="button"] {
+
+    display: inline-block;
+    padding: 0.5em 2em;
+    border: 0;
+    /*border: 0.1em solid white;*/
+    border-radius: 2em;
+    text-decoration: none;
+    text-align: center;
+    color: var(--three);
+    background-color: var(--seven);
+    transition: all 200ms;
+    outline: none;
+}
+a.help:link, a:visited, a:active{
+    color: var(--three);
+}
+
+.container2 button[type="button"]:hover {
+    background-color: var(--five);
+}
+
+.text-field, .title, .title-field{
+    font-family: 'Roboto Mono', monospace;
+}
+
+.white-line {
+    width: 100%;
+    height: 1px;
+    background-color:  var(--three);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 1px;
+    
+}
+
+.template {
+    display: none;
+    margin: 0;
+}
+
+.bold{
+letter-spacing: 0.05em;
+}
+  
+.correct {
+    color: lightgreen;
+}
+
+.wrong {
+    color: lightcoral;
+}
+
+.test-options{
+    display: inline-block;
+    padding: 1rem;
+    border: none;
+    font-weight: bold;
+    /*border: 0.1em solid white;*/
+    font-size: larger;
+    text-decoration: none;
+    text-align: center;
+    color: var(--three);
+    
+    transition: all 200ms;
+    outline: none;
+
+}
+
+.test-options:hover{
+    background-color: var(--five);
+    border-radius:100vh;
+
+}
+
+#table{
+    font-size: large;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    color: white;
+}
+
+p.text{
+    font-size: large;
+    padding-top: 12px;
+    text-align: left;
+    color: white;
+}
