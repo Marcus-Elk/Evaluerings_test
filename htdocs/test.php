@@ -24,11 +24,11 @@
 
 <main>
 	<?php
-
+	
 		if(!isset($_SESSION['user_id'])) {
 			die('<a href="./login.php">Log in</a> to see see the test.');
 		}
-	
+
 		if(!isset($_GET['t'])) {
 			header("Location: ./view_test.php");
 			die();
@@ -56,12 +56,13 @@
 		<?php
 			$query		= "SELECT `id`, `title`, `text` FROM `questions` WHERE `test_id`=$t_id ORDER BY `index`";
 			$q_result	= mysqli_query($db, $query) or die(mysqli_error($db));
-
+			
+			$i = 0;
 			while($q_row = mysqli_fetch_assoc($q_result)) {
+				$i++;
 				$q_id		= $q_row['id'];
-				$q_title	= $q_row['title'];
+				$q_title	= "Q$i: ".$q_row['title'];
 				$q_text		= $q_row['text'];
-
 		?>
 		
 		<div class="question" id="q<?=$q_id?>">

@@ -14,8 +14,7 @@
 
     if(!isTeacher()) {
         die(json_encode(array(
-            'result' => -1,
-            'text' => "bruh..."
+            'result' => -1
         )));
     }
 

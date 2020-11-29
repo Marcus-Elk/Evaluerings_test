@@ -33,9 +33,7 @@
 
             if(isStudent()){
                 echo("<p class=\"text\">You are logged in as a student</p>");
-                echo("<p class=\"text\">You are in team</p>");
             }
-                
             ?>
 
         <?php

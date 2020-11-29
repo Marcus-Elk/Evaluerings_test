@@ -52,7 +52,7 @@ $(document).ready(function() {
 
 				switch(json.result) {
 					case 0:
-						window.location.href = "./index.php";
+						window.location.href = "./result.php?t="+test.id;
 						break;
 					case -1:
 						alert("An error occured while trying to submit your answers.");

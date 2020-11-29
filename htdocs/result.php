@@ -21,10 +21,9 @@
 
 
     <?php
-            if(!isset($_SESSION['user_id'])) {
-                die('<a href="./login.php">Log in</a> to see your test results.');
-            }
-
+        if(!isset($_SESSION['user_id'])) {
+            die('<a href="./login.php">Log in</a> to see your test results.');
+        }
 
         function resultRow($u_id, $u_username) {
             global $db;
@@ -113,26 +112,7 @@
         if(isTeacher()) {
 
             ?>
-            <table id ="table">
-                <tr>
-                    <th>Username</th>
-
-                    <?php
-                        while($q_row = mysqli_fetch_assoc($q_result)) {
-                            $friendly_idx = $q_row['index'] + 1;
-                            echo("<th>Q$friendly_idx</th>");
-                            array_push($q_ids, intval($q_row['id']));
-                            array_push($q_cais, intval($q_row['correct_answer_index']));
-                        }
-
-                        $query = "SELECT `id`, `username` FROM `users` WHERE `team_id`=$team_id;";
-                        $u_result = mysqli_query($db, $query) or die(mysqli_error($db));
-                    ?>
-
-                    <th>Total</th>
-                    <th>%</th>
-                </tr>
-            <table>
+            <table id="results-table">
                 <?php
                     resultHeader();
 
@@ -149,7 +129,7 @@
 
         if(isStudent()) {
             ?>
-            <table>
+            <table id="results-table">
                 <?php
                     resultHeader();
                     resultRow($_SESSION['user_id'], $_SESSION['username']);
