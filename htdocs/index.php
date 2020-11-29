@@ -14,43 +14,38 @@
 </head>
 <body>
 <?php include("./include/navbar.php"); ?>
+<script src="./js/snake.js" defer></script>
 
 <main>
     <?php
         require_once("./include/roles.php");
 
         if(isset($_SESSION['user_id'])) {
-            echo("<p class = \"text\">Username: {$_SESSION['username']}<br></p>");
+            echo("<p class=\"text\">Username: {$_SESSION['username']}<br></p>");
             
             if(isAdmin()) {
-                echo("<p class = \"text\">This is an admin account</p>");
+                echo("<p class=\"text\">This is an admin account</p>");
             }
 
             if(isTeacher()){
-                echo("<p class = \"text\">You are logged in as a teacher</p>");
+                echo("<p class=\"text\">You are logged in as a teacher</p>");
             }
 
             if(isStudent()){
-                echo("<p class = \"text\">You are logged in as a student</p>");
+                echo("<p class=\"text\">You are logged in as a student</p>");
             }
             ?>
 
         <?php
         } else {
-            echo("<p class = \"text\">You are not logged in</p>");
+            echo("<p class=\"text\">You are not logged in</p>");
         }
     ?>
 
-    <div>
-        <textarea class="math-input" rows="5" cols="40" placeholder="Math text here">`[[a, b], [c, d]][[x], [y]]=[[a x + b y], [c x + d y]]`</textarea>
-        <p class="math-output"></p>
-    </div>
-
-    <div>
-        <textarea class="math-input" rows="5" cols="40" placeholder="Math text here">`[[a, b], [c, d]][[x], [y]]=[[a x + b y], [c x + d y]]`</textarea>
-        <p class="math-output"></p>
-    </div>
-
+    <canvas id="game-canvas" width="400" height="300">
+    
+    </canvas>
+    
 </main>
 </body>
 </html>

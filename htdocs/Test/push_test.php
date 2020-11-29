@@ -1,4 +1,3 @@
-
 <?php
     session_start();
 
@@ -7,19 +6,24 @@
 
     $test = json_decode($_POST['json'], TRUE);
 
+    if(!isset($_SESSION['user_id'])) {
+        die(json_encode(array(
+            'result' => -1
+        )));
+    }
+
     if(!isTeacher()) {
         die(json_encode(array(
-            'result' => -1,
-            'text' => "bruh..."
+            'result' => -1
         )));
-    } 
+    }
 
     $t_title = mysqli_real_escape_string($db, $test['title']);
-    //$team_id = $json['team_id'];
+    $team_id = $test['team_id'];
 
-    $query = "INSERT INTO `tests`(`title`, `team_id`) VALUES(
-        '$t_title', 1
-    );";
+    $query = "INSERT INTO `tests`(`title`, `team_id`) VALUES
+    ('$t_title', $team_id);";
+
     $result = mysqli_query($db, $query) or die(json_encode(array(
         'result' => -1,
         'text' => mysqli_error($db)
@@ -27,33 +31,28 @@
 
     $t_id = mysqli_insert_id($db);
 
-    foreach($test['questions'] as $question) {
+    for($i = 0; $i < count($test['questions']); $i++) {
+        $question = $test['questions'][$i];
 
-        $q_title = mysqli_real_escape_string($db, $question['title']);
-        $q_text = mysqli_real_escape_string($db, $question['text']);
+        $q_title    = mysqli_real_escape_string($db, htmlspecialchars($question['title']));
+        $q_text     = mysqli_real_escape_string($db, htmlspecialchars($question['text']));
+        $q_cai      = intval($question['correct_index']);
         
-        $query = "INSERT INTO `questions`(`title`, `text`, `test_id`) VALUES(
-            '$q_title', '$q_text', $t_id
-        );";
-        $result = mysqli_query($db, $query) or die(json_encode(array(
-            'result' => -1,
-            'text' => mysqli_error($db)
-        )));
+        $query = "INSERT INTO `questions`(`title`, `text`, `test_id`, `index`, `correct_answer_index`) VALUES
+        ('$q_title', '$q_text', $t_id, $i, $q_cai);";
+        
+        $result = mysqli_query($db, $query) or die(json_encode(array('result' => -1)));
 
         $q_id = mysqli_insert_id($db);
 
-        foreach($question['answers'] as $answer) {
+        for($j = 0; $j < count($question['answers']); $j++) {
+            $answer = $question['answers'][$j];
+            $a_text = mysqli_real_escape_string($db, htmlspecialchars($answer['text']));
 
-            $a_text     = mysqli_real_escape_string($db, $answer['text']);
-            $is_correct = $answer['is_correct'];
-
-            $query = "INSERT INTO `answer_options`(`text`, `is_correct`, `question_id`) VALUES(
-                '$a_text', $is_correct, $q_id
-            );";
-            $result = mysqli_query($db, $query) or die(json_encode(array(
-                'result' => -1,
-                'text' => mysqli_error($db)
-            )));
+            $query = "INSERT INTO `answers`(`text`, `question_id`, `index`) VALUES
+            ('$a_text', $q_id, $j);";
+            
+            $result = mysqli_query($db, $query) or die(json_encode(array('result' => -1)));
         }
     }
 

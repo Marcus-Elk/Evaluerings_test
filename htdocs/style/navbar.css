@@ -1,4 +1,8 @@
+:root {
 
+	--filter-hover: grayscale(0%) brightness(1);
+
+}
 main {
 	margin-left: 5rem;
 	padding: 1rem;
@@ -8,7 +12,7 @@ main {
 	width: 5rem;
 	height: 100vh;
 	position: fixed;
-	background-color: #202020;
+	background-color: var(--two);
 	z-index: 1; /* mathjax equations display above it unless this is used */
 	transition: width 200ms ease;
 }
@@ -35,7 +39,7 @@ main {
 	display: flex;
 	align-items: center;
 	height: 5rem;
-	color: white;
+	color:  var(--six);
 	text-decoration: none;
 	white-space: nowrap;
 	transition: 200ms;
@@ -44,12 +48,12 @@ main {
 .nav-icon {
 	min-width: 2.5rem;
 	margin-left: 1.25rem;
-	filter: grayscale(100%);
+	filter: grayscale(100%) brightness(1.4);
 	transition: 500ms;
 }
 
 .nav-link:hover .nav-icon {
-	filter: none;
+	filter: var(--filter-hover);
 }
 
 .nav-text {
@@ -66,10 +70,41 @@ main {
 }
 
 .nav-link:hover {
-	background-color: #555;
-	color: white;
+	background-color:var(--four);
+	color: var(--three);
 }
 
 .nav-link.current {
-	background-color: #0F0F0F;
+	background-color: var(--one);
+}
+
+#logo-link {
+	background-color: var(--four);
+}
+
+#logo-link:hover {
+	background-color:var(--four);
+}
+
+#logo-text {
+	text-transform: uppercase;
+	letter-spacing: 0.3rem;
+	display: inline;
+	position: absolute;
+	left: -200px;
+	transition: left 400ms;
+	color: var(--three);
+}
+
+.navbar:hover #logo-text {
+	left: 0px;
+}
+
+#logo-icon {
+	transform: none;
+}
+
+.navbar:hover #logo-icon {
+	margin-left: 11rem;
+	transform: rotate(180deg) scaleY(-1) scaleX(-1);
 }

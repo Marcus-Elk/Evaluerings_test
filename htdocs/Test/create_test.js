@@ -5,6 +5,20 @@ $(document).ready(function() {
 	$(".add-question").click(function() {
         $("#question-template .question").clone(true).appendTo("#test");
     });
+    $(".remove-question").click(function() {  //delete Questions
+        $(this).parent().parent().remove();
+    });
+    $(".remove-answer").click(function() {  //delete Questions
+        $(this).parent().remove();
+    });
+
+    $(".text-field").bind("input propertychange", function() {
+        let out = $(this).next(".text-preview");
+        
+        out.text($(this).val().replace(/(?:\r\n|\r|\n)/g, '<br>'));
+        MathJax.typeset(out);
+    });
+
 
     $(".save").click(function() {
         let test = {
@@ -13,25 +27,24 @@ $(document).ready(function() {
             questions: []
         };
 
-        // add quesions to test:
-        $("#test .question").each(function(q_index, q_element){
+        // add questions to test:
+        $("#test .question").each(function(){
             let question = {
-                title: $(q_element).find(".title-field").val().trim(),
-                text: $(q_element).find(".text-field").val().trim(),
+                title: $(this).find(".title-field").val().trim(),
+                text: $(this).find(".text-field").val().trim(),
+                correct_index: -1,
                 answers: [],
             }
 
             // add answers to question:
-            $(q_element).find(".answer").each(function(a_index, a_element){
+            $(this).find(".answer").each(function(answer_index){
 
-                let isChecked = 0;
-                if($(a_element).children("input[type=checkbox]").is(":checked")){
-                    isChecked = 1;
+                if($(this).children("input[type=checkbox]").is(":checked")){
+                    question.correct_index = answer_index;
                 }
 
                 let answer = {
-                    text: $(a_element).find(".text-field").val().trim(),
-                    is_correct: isChecked
+                    text: $(this).find(".text-field").val().trim(),
                 };
 
                 question.answers.push(answer);
@@ -41,13 +54,11 @@ $(document).ready(function() {
 
         });
 
-        let json = JSON.stringify(test);
-        console.log(json);
         $.ajax({
             url: "./test/push_test.php",
             type: "post",
             data: {
-                json: json
+                json: JSON.stringify(test)
             },
             success: function(response){
                 json_ = JSON.parse(response);

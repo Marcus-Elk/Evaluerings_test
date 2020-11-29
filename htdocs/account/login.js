@@ -19,7 +19,7 @@ $(document).ready(function() {
 
 					switch(json.result) {
 						case 0:
-							window.location = "../index.php";
+							window.location = "./index.php";
 							break;
 						case 1:
 							$("#msg").html("Invalid username or password");
