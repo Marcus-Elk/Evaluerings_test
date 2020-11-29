@@ -1,5 +1,3 @@
-
-
 const canvas = document.getElementById("game-canvas");
 const context = canvas.getContext("2d");
 
@@ -127,22 +125,34 @@ function placeFruit() {
 
 }
 
+
+
+var backgroundColor = "#1D3E53";
+var fruitColor = "#77abb7";
+var snekColor = "#fffff0";
+
+if (theme == !theme){
+backgroundColor = "#414141";
+fruitColor = "#CA3E47";
+}
+
 function draw() {
-	
-	// dark background
-	context.fillStyle ="#1D3E53";
-//	canvas.style.border = '1px solid #fffff0';
-	context.fillRect(0, 0, canvas.width, canvas.height);
+	let root = $(":root");
 
-	// fruit
-	context.fillStyle = "#77abb7";
-	context.fillRect(fruit.x * unitSize, fruit.y * unitSize, unitSize, unitSize);
+    // dark background
+    context.fillStyle = root.css("--ten");
+//    canvas.style.border = '1px solid #fffff0';
+    context.fillRect(0, 0, canvas.width, canvas.height);
 
-	// snek
-	context.fillStyle =  "#fffff0";
-	for(let i = 0; i < snake.length; i++) {
-		context.fillRect(snake[i].x * unitSize, snake[i].y * unitSize, unitSize, unitSize);
-	}
+    // fruit
+    context.fillStyle = root.css("--nine");
+    context.fillRect(fruit.x * unitSize, fruit.y * unitSize, unitSize, unitSize);
+
+    // snek
+    context.fillStyle =  "#fffff0";
+    for(let i = 0; i < snake.length; i++) {
+        context.fillRect(snake[i].x * unitSize, snake[i].y * unitSize, unitSize, unitSize);
+    }
 
 	// score
 	context.font = `bold ${unitSize}px monospace`;

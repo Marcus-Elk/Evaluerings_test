@@ -15,6 +15,7 @@
 });
 
 
+
 theme = !theme;
 
 $("#theme-mode").click(function(){
@@ -42,6 +43,8 @@ $("#theme-mode").click(function(){
 		 .css("--six","#fffff0")
 		 .css("--seven","#414141")
 		 .css("--eight","#CA3E47")
+		 .css("--ten","#414141")
+		 .css("--nine","#CA3E47")
 		 .css("--filter-hover","grayscale(100%) brightness(1.4)");
 
 		$("#dark-theme-icon").css("display", "none");
