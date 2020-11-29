@@ -96,15 +96,23 @@ function move() {
 	else if(dir == 2) y++;
 	else if(dir == 3) x--;
 	
-	if(x < 0)
-		x = gridWidth - 1;
-	else if(x == gridWidth)
-		x = 0;
+	if(x < 0) {
+		initGame();
+		return;
+	}
+	else if(x == gridWidth){
+		initGame();
+		return;
+	}
 	
-	if(y < 0)
-		y = gridHeight - 1;
-	else if(y == gridHeight)
-		y = 0;
+	if(y < 0) {
+		initGame();
+		return;
+	}
+	else if(y == gridHeight){
+		initGame();
+		return;
+	}
 
 	return {x: x, y: y};
 }
