@@ -49,13 +49,13 @@ function initGame() {
 document.addEventListener('keydown', keyPressed)
 
 function keyPressed(event) {
-	if(event.key == 'w')
+	if(event.key == 'w' || event.key == 'W')
 		requestDir = 0;
-	else if(event.key == 'd') 
+	else if(event.key == 'd'  || event.key == 'D') 
 		requestDir = 1;
-	else if(event.key == 's')
+	else if(event.key == 's' || event.key == 'S')
 		requestDir = 2;
-	else if(event.key == 'a')
+	else if(event.key == 'a' || event.key == 'A')
 		requestDir = 3;
 }
 
